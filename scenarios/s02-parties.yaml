@@ -1,0 +1,10 @@
+id: S2
+title: Allocate a party and list it
+summary: Allocate a party through the SDK; it must appear in the SDK's own party listing and in the reference's.
+needs: [localnet]
+lanes: [ts, rust]
+impl: basics:s2_parties
+standard: [parties__local_parties_creation, parties__list_parties]
+verifies:
+  ts: [parties__local_parties_creation, parties__list_parties, parties__json]
+  rust: [parties__local_parties_creation, parties__list_parties, parties__grpc]

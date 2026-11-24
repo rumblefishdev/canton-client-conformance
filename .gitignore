@@ -1,0 +1,16 @@
+.env
+*.env
+.venv/
+__pycache__/
+node_modules/
+target/
+.daml/
+*.dar
+# vendored test DAR (Apache-2.0, see daml/richtypes/NOTICE); built DARs stay ignored
+!daml/richtypes/richtypes.dar
+results/
+report/out/
+vectors/
+.DS_Store
+.idea/
+.vscode/

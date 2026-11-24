@@ -1,0 +1,10 @@
+{
+  "name": "ts-wallet-sdk-adapter",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "@canton-network/core-tx-hashing": "1.2.0",
+    "@canton-network/wallet-sdk": "1.7.0"
+  }
+}

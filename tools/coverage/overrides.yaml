@@ -1,0 +1,626 @@
+# Hand-reviewed overrides to the automated scan. Every entry records who/why in `note`.
+# status: claimed | verified | found | partial | not_found | not_provided | unassessed
+# partial = hand review found building blocks only (note says what is missing)
+# Reviewed 2026-11-19 (desk review of repo contents; SDK HEADs as listed in coverage.json).
+java:
+  documentation__user_manual:
+    status: found
+    note: Official Java bindings docs on docs.canton.network (language-bindings/java) + Javadoc
+  documentation__tutorials:
+    status: found
+    note: Official Java bindings docs on docs.canton.network (language-bindings/java) + Javadoc
+  documentation__examples:
+    status: found
+    note: Official Java bindings docs on docs.canton.network (language-bindings/java) + Javadoc
+  documentation__reference:
+    status: found
+    note: Official Java bindings docs on docs.canton.network (language-bindings/java) + Javadoc
+  codegen_and_bindings__json_bindings:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  codegen_and_bindings__grpc_bindings:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  codegen_and_bindings__pqs_bindings:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  basic_infrastructure__tls:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  basic_infrastructure__authorization:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  basic_infrastructure__error_parsing_and_handling:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  basic_infrastructure__tracing:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  basic_infrastructure__retry_logic:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  basic_infrastructure__logging:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  basic_infrastructure__metrics:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  basic_infrastructure__signing:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  basic_infrastructure__node_health:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__json:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__grpc:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__internal_commands:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__external_commands:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__deduplication:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__command_recovery:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__batching:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__contract_keys:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__explicit_disclosure:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__pending_set:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__package_selection:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  commands__ha:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__json:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__grpc:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__acs_streaming:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__acs_paging:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__updates_streaming:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__updates_paging:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__reverse_order:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__interfaces:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__topology_events:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__in_memory_acs:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__resilient_streams:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  streams__ha:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  parties__json:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  parties__grpc:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  parties__list_parties:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  parties__local_parties_creation:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  parties__external_parties_creation:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  parties__local_parties_modification:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  parties__external_parties_modification:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  parties__decentralized_party_creation:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  packages__json:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  packages__grpc:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  packages__upload:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  packages__validation:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  packages__vetting:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  packages__listing:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  packages__package_preference:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  packages__description:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__list_mappings:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__mapping_presentation:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__mapping_construction:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__mapping_signing:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__mapping_submission:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__namespace_delegations:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__decentralized_namespaces:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__owner_to_key_mapping:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__party_to_participant:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__party_to_key_mapping:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__vetted_packages:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__topology_via_admin_api:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  topology__topology_via_ledger_api:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  user__self_inspect:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  user__self_admin:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  traffic__traffic_computation:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  traffic__traffic_account_listing_and_inspecting:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  traffic__traffic_account_selection:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  traffic__traffic_top_up:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  multi_synchronizer__listing:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  multi_synchronizer__parties:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  multi_synchronizer__packages:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  multi_synchronizer__commands:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  multi_synchronizer__streams:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  token_standard__one_step_transfers:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  token_standard__pre_approvals:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  token_standard__allocate:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  token_standard__transfer:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  token_standard__instrument_inspection:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  token_standard__v1:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+  token_standard__v2:
+    status: not_provided
+    note: bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs
+ts:
+  codegen_and_bindings__grpc_codec:
+    status: not_provided
+    note: 'JSON Ledger API only by design (no gRPC client; asGrpcError only maps gRPC status codes in JSON error bodies)'
+  codegen_and_bindings__grpc_bindings:
+    status: not_provided
+    note: 'JSON Ledger API only by design (no gRPC client; asGrpcError only maps gRPC status codes in JSON error bodies)'
+  commands__grpc:
+    status: not_provided
+    note: 'JSON Ledger API only by design (no gRPC client; asGrpcError only maps gRPC status codes in JSON error bodies)'
+  parties__grpc:
+    status: not_provided
+    note: 'JSON Ledger API only by design (no gRPC client; asGrpcError only maps gRPC status codes in JSON error bodies)'
+  packages__grpc:
+    status: not_provided
+    note: 'JSON Ledger API only by design (no gRPC client; asGrpcError only maps gRPC status codes in JSON error bodies)'
+  packages__upload:
+    status: found
+    note: 'sdk ledger.dar: POST /v2/packages with synchronizerId + vetAllPackages (dar/index.ts)'
+  packages__listing:
+    status: partial
+    note: 'Partial: GET /v2/packages, used only to check whether a package id is present (dar/index.ts check()); no filtering by name/synchronizer'
+  parties__list_parties:
+    status: partial
+    note: 'Partial: GET /v2/parties then client-side isLocal filter (party/namespace.ts); no server-side filter options exposed'
+  packages__validation:
+    status: not_found
+    note: '/v2/dars/validate exists only in generated OpenAPI types; no hand-written call'
+  packages__package_preference:
+    status: not_found
+    note: '/v2/interactive-submission/preferred-packages exists only in generated types; package_id_selection_preference is passed through on commands (see commands__package_selection)'
+  packages__description:
+    status: not_found
+    note: '/v2/packages/{package-id} exists only in generated types; no hand-written call'
+  basic_infrastructure__node_health:
+    status: not_found
+    note: 'Only a one-off GET /v2/version at LedgerClient.init() for version negotiation; no health monitoring'
+  basic_infrastructure__tracing:
+    status: not_found
+    note: 'Only a traceId field on log entries (logger/types.ts); no OpenTelemetry / W3C trace-context propagation found'
+  parties__local_parties_modification:
+    status: not_found
+    note: 'Scan hit was a local helper in tx-visualizer; no UpdatePartyDetails / PATCH /v2/parties/{party} call'
+  streams__reverse_order:
+    status: not_found
+    note: 'Scan hit was ORDER BY in the wallet SQL store, not a Ledger API stream'
+  streams__topology_events:
+    status: not_found
+    note: 'Scan hits were stored topologyTransactions strings for party onboarding; no topology-event stream consumption'
+  commands__contract_keys:
+    status: partial
+    note: 'Weak: ExerciseByKey command payload passed through dApp RPC types; no key-specific helpers'
+  commands__batching:
+    status: not_found
+    note: 'All hand-written submissions send commands: [single]; no batching helper (generated types allow arrays)'
+  topology__topology_via_ledger_api:
+    status: found
+    note: 'External party onboarding via /v2/parties/external/generate-topology + /v2/parties/external/allocate'
+  topology__mapping_signing:
+    status: found
+    note: 'sdk utils.hash.topologyTransaction(): multi-hash of prepared topology txs for external signing (utils/hash/service.ts)'
+  topology__topology_via_admin_api:
+    status: not_found
+    note: 'Admin API not used; topology only via Ledger API external-party endpoints'
+  traffic__traffic_account_listing_and_inspecting:
+    status: found
+    note: 'amulet.traffic.status() (amulet/traffic.ts)'
+  traffic__traffic_top_up:
+    status: found
+    note: 'amulet.traffic.buy() (amulet/traffic.ts)'
+  commands__pending_set:
+    status: not_found
+    note: 'Checked by hand: no pending/in-flight contract tracking found'
+  basic_infrastructure__metrics:
+    status: not_found
+    note: 'Checked by hand: no metrics instrumentation found'
+  documentation__user_manual:
+    status: found
+    note: docs/ (dapp-sdk guides, wallet-integration-guide, dapp-building) + examples/; API reference tooling not found in repo
+  documentation__tutorials:
+    status: found
+    note: docs/ (dapp-sdk guides, wallet-integration-guide, dapp-building) + examples/; API reference tooling not found in repo
+  documentation__examples:
+    status: found
+    note: docs/ (dapp-sdk guides, wallet-integration-guide, dapp-building) + examples/; API reference tooling not found in repo
+  documentation__reference:
+    status: unassessed
+    note: docs/ (dapp-sdk guides, wallet-integration-guide, dapp-building) + examples/; API reference tooling not found in repo
+python:
+  commands__json:
+    status: found
+    note: 'Raw generated OpenAPI v2 function re-exported in dazl.api (post_v2_commands_submit_and_wait, async_submit); no wrapper'
+  parties__json:
+    status: found
+    note: 'Raw generated OpenAPI v2 function re-exported in dazl.api (get/post/patch_v2_parties); no wrapper'
+  packages__json:
+    status: found
+    note: 'Raw generated OpenAPI v2 function re-exported in dazl.api (get/post_v2_packages); no wrapper'
+  codegen_and_bindings__json_bindings:
+    status: not_found
+    note: 'Raw generated OpenAPI v2 function re-exported in dazl.api; nothing bridges them to dazl Daml values/codegen'
+  commands__external_commands:
+    status: not_found
+    note: 'Only preferred-package endpoints re-exported; no prepare/execute interactive submission'
+  commands__command_recovery:
+    status: partial
+    note: 'Weak: Raw generated OpenAPI v2 function re-exported in dazl.api (post_v2_commands_completions)'
+  parties__external_parties_creation:
+    status: found
+    note: 'Raw generated OpenAPI v2 function re-exported in dazl.api (post_v2_parties_external_generate_topology / _allocate); no signing helper'
+  parties__local_parties_modification:
+    status: found
+    note: 'Raw generated OpenAPI v2 function re-exported in dazl.api (patch_v2_parties_party)'
+  packages__vetting:
+    status: found
+    note: 'Raw generated OpenAPI v2 function re-exported in dazl.api (get_v2_package_vetting, post_v2_package_vetting_list); read-only'
+  topology__vetted_packages:
+    status: found
+    note: 'Raw generated OpenAPI v2 function re-exported in dazl.api (package vetting list); read-only'
+  packages__package_preference:
+    status: found
+    note: 'Raw generated OpenAPI v2 function re-exported in dazl.api (post_v2_interactive_submission_preferred_packages)'
+  user__self_admin:
+    status: found
+    note: 'Raw generated OpenAPI v2 function re-exported in dazl.api (patch_v2_users_user_id)'
+  multi_synchronizer__listing:
+    status: found
+    note: 'Raw generated OpenAPI v2 function re-exported in dazl.api (get_v2_state_connected_synchronizers)'
+  token_standard__allocate:
+    status: not_found
+    note: 'Scan hit was AllocateParty, not token-standard allocation; dazl has no token-standard support'
+  streams__json:
+    status: not_found
+    note: 'No updates/ACS streaming endpoints in dazl.api re-exports'
+  commands__grpc:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  commands__internal_commands:
+    status: found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard. v2 only via raw dazl.api.post_v2_commands_submit_and_wait.'
+  commands__deduplication:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  commands__contract_keys:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  streams__grpc:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  streams__acs_streaming:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  streams__resilient_streams:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  streams__interfaces:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  parties__grpc:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  parties__list_parties:
+    status: found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard. v2 listing only via raw dazl.api.get_v2_parties.'
+  parties__local_parties_creation:
+    status: found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard. v2 only via raw dazl.api.post_v2_parties.'
+  packages__grpc:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  packages__upload:
+    status: found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard. v2 only via raw dazl.api.post_v2_packages.'
+  packages__listing:
+    status: found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard. v2 only via raw dazl.api.get_v2_packages.'
+  packages__description:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  user__self_inspect:
+    status: found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard. v2 only via raw dazl.api.get_v2_users_user_id(_rights).'
+  basic_infrastructure__node_health:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  codegen_and_bindings__grpc_bindings:
+    status: not_found
+    note: 'dazl hand-written client targets Ledger API v1 / Canton 2.x (README: ''not intended for use with Canton 3.x'') — v1 implementation does not count toward this v2 standard.'
+  streams__reverse_order:
+    status: not_found
+    note: 'Scan hit was in values/context.py, unrelated to stream ordering'
+  commands__pending_set:
+    status: not_found
+    note: 'Checked by hand: none'
+  documentation__user_manual:
+    status: found
+    note: Sphinx docs/ (basics.rst + per-module API .rst); no tutorials or examples dir
+  documentation__tutorials:
+    status: not_found
+    note: Sphinx docs/ (basics.rst + per-module API .rst); no tutorials or examples dir
+  documentation__examples:
+    status: not_found
+    note: Sphinx docs/ (basics.rst + per-module API .rst); no tutorials or examples dir
+  documentation__reference:
+    status: found
+    note: Sphinx docs/ (basics.rst + per-module API .rst); no tutorials or examples dir
+rust_nodejumper:
+  commands__package_selection:
+    status: partial
+    note: 'Partial: CommandBuilder::with_package_id_selection_preference() passes the preference through; no check against vetting state. The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  streams__topology_events:
+    status: partial
+    note: 'Partial: Update::TopologyTransaction is decoded on the update stream (update.rs); no subscription/processing helpers. The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  parties__local_parties_modification:
+    status: partial
+    note: 'Partial: JSON client update_party_details() (json.rs). The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  packages__description:
+    status: partial
+    note: 'Partial: get_package() returns raw bytes and get_package_status() (canton-admin client.rs); no package/type descriptors. The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  multi_synchronizer__commands:
+    status: partial
+    note: 'Partial: with_synchronizer_id() on command builders; no target selection or retry tracking. The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  multi_synchronizer__streams:
+    status: partial
+    note: 'Partial: Update::Reassignment decoded (update.rs). The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  topology__party_to_participant:
+    status: partial
+    note: 'Read-only: TopologyClient::list_party_to_participant() via Admin API (topology.rs); no create/change. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  topology__vetted_packages:
+    status: partial
+    note: 'Read-only: TopologyClient::list_vetted_packages() via Admin API (topology.rs). Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  topology__topology_via_admin_api:
+    status: partial
+    note: 'Read-only TopologyClient (party-to-participant, namespace delegations, vetted packages); no write service. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  topology__party_to_key_mapping:
+    status: not_found
+    note: 'Scan hits were doc comments in the external-party onboarding flow; no PartyToKeyMapping management. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  topology__topology_via_ledger_api:
+    status: found
+    note: 'External party onboarding: generate_external_party_topology() + allocate_external_party() (canton-admin client.rs). Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  topology__mapping_signing:
+    status: partial
+    note: 'Partial: external_party.rs computes the topology multi_hash that a canton_signer key signs during onboarding; no general topology signing. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  topology__owner_to_key_mapping:
+    status: not_found
+    note: 'Only a test stub (tests/topology_inprocess.rs); no client method. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  traffic__traffic_computation:
+    status: partial
+    note: 'Partial: prepared transactions expose cost_estimation() (on by default, opt-out); no limits or unit conversion. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  traffic__traffic_account_listing_and_inspecting:
+    status: not_found
+    note: 'Checked by hand: no traffic-state client. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  traffic__traffic_top_up:
+    status: not_found
+    note: 'Checked by hand: no traffic purchase helper. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  token_standard__v1:
+    status: found
+    note: 'canton-token: v1 transfer/allocation/holdings modules + generated splice-api-token-*-v1 crates. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  token_standard__v2:
+    status: found
+    note: 'canton-token::v2 module + generated splice-api-token-*-v2 crates. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  packages__validation:
+    status: not_found
+    note: 'Checked by hand: no ValidateDarFile / validate call. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  topology__mapping_construction:
+    status: not_found
+    note: 'No TopologyManagerWriteService client; topology is built only by the participant during external-party onboarding. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  topology__mapping_submission:
+    status: not_found
+    note: 'No AddTransactions client. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way.'
+  commands__batching:
+    status: not_found
+    note: 'Confirmed: The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  commands__pending_set:
+    status: not_found
+    note: 'Confirmed: The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  streams__in_memory_acs:
+    status: not_found
+    note: 'Confirmed: The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  parties__external_parties_modification:
+    status: not_found
+    note: 'Confirmed: The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  parties__decentralized_party_creation:
+    status: not_found
+    note: 'Confirmed: The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  packages__upload:
+    status: not_found
+    note: 'Confirmed: The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  packages__package_preference:
+    status: not_found
+    note: 'Confirmed: The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  topology__decentralized_namespaces:
+    status: not_found
+    note: 'Confirmed: The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  user__self_admin:
+    status: not_found
+    note: 'Confirmed: The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  commands__ha:
+    status: not_found
+    note: 'The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  streams__ha:
+    status: not_found
+    note: 'The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  multi_synchronizer__parties:
+    status: not_found
+    note: 'The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  multi_synchronizer__packages:
+    status: not_found
+    note: 'The SDK''s own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1).'
+  documentation__user_manual:
+    status: found
+    note: mdBook book/ with guides (codegen, interactive submission, PQS, token standard, ...), crate examples/, rustdoc
+  documentation__tutorials:
+    status: found
+    note: mdBook book/ with guides (codegen, interactive submission, PQS, token standard, ...), crate examples/, rustdoc
+  documentation__examples:
+    status: found
+    note: mdBook book/ with guides (codegen, interactive submission, PQS, token standard, ...), crate examples/, rustdoc
+  documentation__reference:
+    status: found
+    note: mdBook book/ with guides (codegen, interactive submission, PQS, token standard, ...), crate examples/, rustdoc
+rust_zenith:
+  documentation__user_manual:
+    status: not_found
+    note: examples/ only; 43-line README
+  documentation__tutorials:
+    status: not_found
+    note: examples/ only; 43-line README
+  documentation__examples:
+    status: found
+    note: examples/ only; 43-line README
+  documentation__reference:
+    status: not_found
+    note: examples/ only; 43-line README
+csharp:
+  documentation__user_manual:
+    status: found
+    note: docs/public + samples/ + docfx.json API reference
+  documentation__tutorials:
+    status: found
+    note: docs/public + samples/ + docfx.json API reference
+  documentation__examples:
+    status: found
+    note: docs/public + samples/ + docfx.json API reference
+  documentation__reference:
+    status: found
+    note: docs/public + samples/ + docfx.json API reference
+go:
+  documentation__user_manual:
+    status: found
+    note: 701-line README as manual, examples/, reference via pkg.go.dev; docs/ is dev-only
+  documentation__tutorials:
+    status: not_found
+    note: 701-line README as manual, examples/, reference via pkg.go.dev; docs/ is dev-only
+  documentation__examples:
+    status: found
+    note: 701-line README as manual, examples/, reference via pkg.go.dev; docs/ is dev-only
+  documentation__reference:
+    status: found
+    note: 701-line README as manual, examples/, reference via pkg.go.dev; docs/ is dev-only

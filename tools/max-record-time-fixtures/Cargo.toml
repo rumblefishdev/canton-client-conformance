@@ -1,0 +1,13 @@
+[package]
+name = "poc-max-record-time"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+# Same SDK commit as ../../adapters/rust-nodejumper.
+[dependencies]
+canton-ledger = { git = "https://github.com/nodejumper-org/canton-rust-sdk", rev = "8d8a92bed1c4b58e01472d6f1d277b786bc6d3b2" }
+canton-proto  = { git = "https://github.com/nodejumper-org/canton-rust-sdk", rev = "8d8a92bed1c4b58e01472d6f1d277b786bc6d3b2" }
+prost      = "0.14"
+base64     = "0.22"
+serde_json = "1"

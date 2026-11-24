@@ -1,0 +1,10 @@
+id: S5
+title: Exercise a non-consuming choice
+summary: Marker.Mint through the SDK; exactly one new Asset with the right amount, and the Marker stays active.
+needs: [localnet]
+lanes: [ts, rust]
+impl: basics:s5_exercise
+standard: [commands__json, commands__grpc]
+verifies:
+  ts: [commands__json]
+  rust: [commands__grpc]

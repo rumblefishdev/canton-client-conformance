@@ -1,0 +1,4 @@
+richtypes.dar, RichTypes.daml and daml.yaml are copied unchanged from
+peacefulstudio/canton-dotnet-sdk @ ca748b9a0f8be7ceca48e05cf93c7b8160c4de94 (conformance/richtypes),
+Copyright 2026 Peaceful Studio OÜ, Apache-2.0. Reused so the spike needs no Daml toolchain;
+our own conformance-model package replaces it later.

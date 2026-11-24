@@ -1,0 +1,13 @@
+id: S4
+title: Create a contract and read it back from the ACS
+summary: Create through the SDK, find the contract in the SDK's own ACS read, compare the payload with the reference.
+needs: [localnet]
+lanes: [ts, rust]
+impl: basics:s4_create_acs
+standard: [commands__internal_commands, streams__acs_streaming]
+# TS reads with one POST /v2/state/active-contracts (no websocket), so it does not verify ACS streaming.
+# streams__json / streams__grpc also cover update subscriptions, which S4 does not exercise.
+verifies:
+  ts: [commands__internal_commands]
+  rust: [commands__internal_commands, streams__acs_streaming]
+findings: ["docs/findings-live.md §2 (TS create does not return the contract id)"]

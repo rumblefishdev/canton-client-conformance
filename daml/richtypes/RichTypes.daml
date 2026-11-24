@@ -1,0 +1,345 @@
+-- Copyright 2026 Peaceful Studio OÜ
+-- SPDX-License-Identifier: Apache-2.0
+module RichTypes where
+
+import DA.Time ()
+import DA.TextMap (TextMap)
+import qualified DA.TextMap as TextMap
+import DA.Map (Map)
+import qualified DA.Map as Map
+import DA.Set (Set)
+import qualified DA.Set as Set
+import DA.NonEmpty.Types (NonEmpty(..))
+
+data Profile = Profile
+  with
+    nickname : Text
+    level : Int
+  deriving (Eq, Show)
+
+data Outcome = Win with prize : Numeric 2; tier : Text
+             | Pending
+  deriving (Eq, Show)
+
+data Suit = Clubs | Diamonds | Hearts | Spades
+  deriving (Eq, Show)
+
+data Box a = Box
+  with
+    item : a
+  deriving (Eq, Show)
+
+data Crate a = Crate
+  with
+    item : Optional a
+  deriving (Eq, Show)
+
+data Slot a = Filled a
+            | Vacant
+  deriving (Eq, Show)
+
+data Branch = Branch
+  with
+    label : Text
+    children : [Branch]
+  deriving (Eq, Show)
+
+template Marker
+  with
+    owner : Party
+  where
+    signatory owner
+
+    nonconsuming choice Mint : ContractId Asset
+      with
+        amount : Decimal
+      controller owner
+      do
+        create Asset with issuer = owner, amount
+
+data HoldingView = HoldingView
+  with
+    amount : Decimal
+  deriving (Eq, Show)
+
+interface Holding where
+  viewtype HoldingView
+
+  holder : Party
+
+  nonconsuming choice Describe : Text
+    with
+      prefix : Text
+    controller holder this
+    do
+      let holdingView = view this
+      pure (prefix <> show holdingView.amount)
+
+  choice Reissue : ContractId Holding
+    with
+      newAmount : Decimal
+    controller holder this
+    do
+      create Asset with issuer = holder this, amount = newAmount
+        >>= \cid -> pure (toInterfaceContractId @Holding cid)
+
+  nonconsuming choice Split : [ContractId Holding]
+    with
+      pieces : Int
+    controller holder this
+    do
+      let holdingView = view this
+      cids <- mapA
+        (const (create Asset with issuer = holder this, amount = holdingView.amount))
+        [1 .. pieces]
+      pure (map (toInterfaceContractId @Holding) cids)
+
+  nonconsuming choice Grade : Suit
+    controller holder this
+    do
+      pure Hearts
+
+template Asset
+  with
+    issuer : Party
+    amount : Decimal
+  where
+    signatory issuer
+
+    interface instance Holding for Asset where
+      view = HoldingView with amount
+      holder = issuer
+
+template RichRecord
+  with
+    owner : Party
+    count : Int
+    amount : Numeric 10
+    label : Text
+    active : Bool
+    asOf : Date
+    observedAt : Time
+    note : Optional Text
+    nestedNote : Optional (Optional Text)
+    tags : [Text]
+    attributes : TextMap Text
+    genMap : Map Party Int
+    unitField : ()
+    marker : ContractId Marker
+    holdingCid : ContractId Holding
+    holdingCids : [ContractId Holding]
+    profile : Profile
+    outcome : Outcome
+    suit : Suit
+    fee : Numeric 2
+  where
+    signatory owner
+
+    nonconsuming choice Relabel : ContractId RichRecord
+      with
+        newLabel : Text
+      controller owner
+      do
+        create this with label = newLabel
+
+    nonconsuming choice DescribeOutcome : Outcome
+      with
+        probe : Optional Int
+      controller owner
+      do
+        pure outcome
+
+    nonconsuming choice Ping : ()
+      controller owner
+      do
+        pure ()
+
+template TypeCorners
+  with
+    owner : Party
+    boxedText : Box Text
+    boxedProfile : Box Profile
+    slot : Slot Int
+    nestedNote : Optional (Box (Optional Text))
+    maybeMaybeNote : Optional (Optional Text)
+    crate : Crate Text
+    quotaByParty : Map Party Int
+    labelByRank : Map Int Text
+    rankOrLabel : Either Int Text
+    noteOrRank : Either (Optional Text) Int
+    pair : (Text, Int)
+    triple : (Text, Int, Bool)
+    branch : Branch
+    whole : Numeric 0
+    finest : Numeric 37
+  where
+    signatory owner
+
+    nonconsuming choice Rebox : ContractId TypeCorners
+      with
+        replacement : Box Text
+      controller owner
+      do
+        create this with boxedText = replacement
+
+template OptionalCounts
+  with
+    owner : Party
+    label : Text
+    maybeCount : Optional Int
+  where
+    signatory owner
+
+template GenericResults
+  with
+    owner : Party
+  where
+    signatory owner
+
+    nonconsuming choice ReturnContractIds : [ContractId GenericResults]
+      controller owner
+      do
+        cid <- create this
+        pure [cid]
+
+    nonconsuming choice ReturnOptionalText : Optional Text
+      with
+        wantSome : Bool
+      controller owner
+      do
+        pure (if wantSome then Some "present" else None)
+
+    nonconsuming choice ReturnTextMap : TextMap Int
+      controller owner
+      do
+        pure (TextMap.fromList [("alpha", 1), ("beta", 2)])
+
+    nonconsuming choice ReturnGenMap : Map Text Int
+      controller owner
+      do
+        pure (Map.fromList [("alpha", 1), ("beta", 2)])
+
+    nonconsuming choice ReturnTuple : (Text, Int)
+      controller owner
+      do
+        pure ("alpha", 1)
+
+    nonconsuming choice ReturnEither : Either Text Int
+      with
+        wantRight : Bool
+      controller owner
+      do
+        pure (if wantRight then Right 1 else Left "alpha")
+
+    nonconsuming choice ReturnSet : Set Int
+      controller owner
+      do
+        pure (Set.fromList [1, 2, 3])
+
+    nonconsuming choice ReturnNonEmpty : NonEmpty Int
+      controller owner
+      do
+        pure (NonEmpty with hd = 1; tl = [2, 3])
+
+    nonconsuming choice ReturnNestedOptional : Optional (Optional Text)
+      with
+        outer : Bool
+        inner : Bool
+      controller owner
+      do
+        pure (if outer then Some (if inner then Some "present" else None) else None)
+
+    nonconsuming choice ReturnOutcome : Outcome
+      with
+        wantWin : Bool
+      controller owner
+      do
+        pure (if wantWin then Win with prize = 12.50; tier = "gold" else Pending)
+
+    nonconsuming choice ReturnSuit : Suit
+      controller owner
+      do
+        pure Hearts
+
+    nonconsuming choice ReturnSlot : Slot Int
+      controller owner
+      do
+        pure (Filled 7)
+
+    nonconsuming choice ReturnBox : Box Int
+      controller owner
+      do
+        pure (Box with item = 5)
+
+    nonconsuming choice ReturnProfiles : [Profile]
+      controller owner
+      do
+        pure [Profile "alice" 3, Profile "bob" 4]
+
+    nonconsuming choice ReturnOutcomes : Map Text Outcome
+      controller owner
+      do
+        pure (Map.fromList [("won", Win 12.50 "gold"), ("waiting", Pending)])
+
+    nonconsuming choice ReturnOptionalSuit : Optional Suit
+      controller owner
+      do
+        pure (Some Hearts)
+
+data TrailingNote = TrailingNote
+  with
+    text : Text
+    remark : Optional Text
+  deriving (Eq, Show)
+
+template OptionalTails
+  with
+    owner : Party
+    midNote : Optional Text
+    inner : TrailingNote
+    tailNote : Optional Text
+  where
+    signatory owner
+
+    nonconsuming choice EchoOptionalTails : OptionalTails
+      controller owner
+      do
+        pure this
+
+template NestedOptionalTails
+  with
+    owner : Party
+    midMaybe : Optional (Optional Text)
+    tailMaybe : Optional (Optional Text)
+  where
+    signatory owner
+
+    nonconsuming choice EchoNestedOptionalTails : NestedOptionalTails
+      controller owner
+      do
+        pure this
+
+template ThreeDeepOptionals
+  with
+    owner : Party
+    deepNote : Optional (Optional (Optional Text))
+    tailDeepNote : Optional (Optional (Optional Text))
+  where
+    signatory owner
+
+data AnnotationView = AnnotationView
+  with
+    label : Text
+    nested : Optional (Optional Text)
+  deriving (Eq, Show)
+
+interface Annotated where
+  viewtype AnnotationView
+
+template NestedOptionalShapes
+  with
+    owner : Party
+    boxed : Box (Optional (Optional Text))
+    trailing : (Text, Optional (Optional Text))
+  where
+    signatory owner

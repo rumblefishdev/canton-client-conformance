@@ -1,0 +1,27 @@
+id: S11a
+title: Prepared-transaction hash vs DA's vectors
+summary: >
+  Every vector from canton-network/wallet core/tx-hashing (pinned in tools/fetch-vectors.sh) through each SDK's
+  public hasher, schemes V2 and V3. The vectors are the TS package's own test suite, so TS passing is expected;
+  Rust is the independent subject. Reject vectors encode the TS package's policy, which is stricter than the
+  Canton spec, so a Rust hash for one is a divergence to triage, not a confirmed bug.
+needs: [vectors]
+lanes: [ts, rust]
+impl: signing:hash_vectors
+standard: [basic_infrastructure__signing, commands__external_commands]
+findings: ["docs/findings-hashcheck.md §1 (83/83 agree), §2 (Rust hashes 13 inputs TS refuses)"]
+cases:
+  - id: v2
+    title: Canton 3.5.10 prepare responses, scheme V2
+  - id: v3
+    title: Canton 3.5.10 prepare responses, scheme V3
+  - id: held-out
+    title: V3 captures made after the TS package was written
+  - id: mutation
+    title: One hashed byte changed (hash must change)
+  - id: reject
+    title: Inputs that must be refused
+    known:
+      rust:
+        verdict: diverges
+        finding: "findings-hashcheck §2: 13 accepted (5 with data the hash does not bind, 8 malformed structures)"

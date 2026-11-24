@@ -1,0 +1,43 @@
+id: S14
+title: ACS reads return every active contract
+summary: >
+  A fresh party gets Asset contracts (party field `issuer`, implements Holding) and Marker contracts (party field
+  `owner`), 5 and then 250 of each, above the JSON API's default list limit of 200. Oracle: the reference reading
+  every page. Fewer contracts without an error is a fail; an error instead of the contracts is a divergence.
+needs: [localnet]
+lanes: [ts, rust]
+impl: acs:run
+standard: [streams__acs_paging, streams__acs_streaming, streams__interfaces]
+findings: ["docs/findings-live.md §7 (read until complete drops contracts), §8 (list limit), §9 (cache)"]
+cases:
+  - id: default
+    title: Default read (TS acsReader.read; Rust gRPC stream)
+    known:
+      ts:
+        verdict: diverges
+        finding: "findings-live §8: above 200 contracts the default read errors (413) where Rust's stream returns them"
+  - id: complete-issuer
+    title: Read everything, template with an `issuer` field (TS continueUntilCompletion)
+    known:
+      ts:
+        verdict: fail
+        finding: "findings-live §7: rebuilds the ACS from /v2/updates and keeps only contracts whose `owner` is the party"
+  - id: complete-owner
+    title: Read everything, template with an `owner` field (control)
+  - id: paged
+    title: Every page of the paginated read
+    verifies:
+      ts: [streams__acs_paging]
+      rust: [streams__acs_paging]
+  - id: interface
+    title: Read everything by interface (Holding; the path of TS sdk.token.utxos.list)
+    known:
+      ts:
+        verdict: fail
+        finding: "findings-live §7: same filter; token holdings of templates without an `owner` field disappear"
+  - id: warm-cache
+    title: Default read on a warm SDK instance vs a fresh one
+    known:
+      ts:
+        verdict: diverges
+        finding: "findings-live §9: acsReader.read caches per party and template; earlier calls change later answers"

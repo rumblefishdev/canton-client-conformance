@@ -1,0 +1,10 @@
+id: S6
+title: Daml-LF value round-trip (RichRecord, 21 fields)
+summary: >
+  Create a record covering every Daml-LF type with edge values and read it back; compared with the input and
+  with the reference. The Rust adapter builds proto values itself, so this checks the transport, not codegen.
+needs: [localnet]
+lanes: [ts, rust]
+impl: basics:s6_roundtrip
+standard: [codegen_and_bindings__daml_representation]
+findings: ["docs/findings-live.md §1 (nested Optional in the flat JSON form is stored as None)"]

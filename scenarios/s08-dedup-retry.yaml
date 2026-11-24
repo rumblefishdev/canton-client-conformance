@@ -1,0 +1,34 @@
+id: S8
+title: De-duplication and retries under faults
+summary: >
+  Submissions go through a fault proxy that rejects before execution (SEQUENCER_BACKPRESSURE) or loses the
+  response after the commit. Every case runs on a fresh party; the oracle is the reference's contract count.
+  A lane that retries by itself must retry a retriable error; one that does not must surface it. No lane may
+  commit a command id twice.
+needs: [localnet]
+lanes: [ts, rust, rust-json, rust-retry, rust-json-retry]
+impl: dedup:run
+standard: [commands__deduplication, basic_infrastructure__retry_logic, commands__command_recovery]
+findings: ["docs/findings-live.md §10 (TS retry never fires on the JSON API), §11 (agreement)"]
+cases:
+  - id: control-no-id
+    title: Two submits without a command id commit twice (control)
+  - id: same-id-sequential
+    title: Same command id twice, in turn
+    verifies:
+      ts: [commands__deduplication]
+      rust: [commands__deduplication]
+  - id: same-id-concurrent
+    title: Same command id twice, concurrently (real participant, no fault injected)
+    known:
+      ts:
+        verdict: fail
+        finding: "findings-live §10: SUBMISSION_ALREADY_IN_FLIGHT is on TS's retry list, but JSON API errors bypass the retry"
+  - id: backpressure
+    title: SEQUENCER_BACKPRESSURE before execution
+    known:
+      ts:
+        verdict: fail
+        finding: "findings-live §10: TS lists SEQUENCER_BACKPRESSURE as retriable, yet fails after one attempt"
+  - id: lost-response
+    title: Response lost after commit, then resubmit with the same id

@@ -1,0 +1,4689 @@
+{
+ "standard_rows": 90,
+ "sdks": [
+  {
+   "key": "java",
+   "name": "Java (DA, official)",
+   "repo": "digital-asset/canton",
+   "head": "5362585 2026-11-17",
+   "files_scanned": 157,
+   "note": "Official bindings = javaapi.data model classes; codegen via `dpm codegen-java` (not scanned).",
+   "cells": {
+    "codegen_and_bindings__daml_representation": {
+     "status": "found",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/codegen/ContractCompanion.java (17)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/codegen/ValueDecoder.java (12)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/codegen/PrimitiveValueDecoders.java (11)"
+     ],
+     "hits": 151
+    },
+    "codegen_and_bindings__json_codec": {
+     "status": "found",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/codegen/ContractCompanion.java (27)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/codegen/Choice.java (24)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/codegen/InterfaceCompanion.java (10)"
+     ],
+     "hits": 70
+    },
+    "codegen_and_bindings__grpc_codec": {
+     "status": "found",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/codegen/ContractCompanion.java (16)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetEventsByContractIdResponse.java (14)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/User.java (14)"
+     ],
+     "hits": 525
+    },
+    "codegen_and_bindings__json_bindings": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "codegen_and_bindings__grpc_bindings": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "codegen_and_bindings__pqs_bindings": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "basic_infrastructure__tls": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "basic_infrastructure__authorization": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "basic_infrastructure__error_parsing_and_handling": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/CreatedEvent.java (2)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/Completion.java (1)"
+     ],
+     "hits": 3,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "basic_infrastructure__tracing": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/Utils.java (3)"
+     ],
+     "hits": 3,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "basic_infrastructure__retry_logic": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "basic_infrastructure__logging": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/codegen/PrimitiveValueDecoders.java (8)"
+     ],
+     "hits": 8,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "basic_infrastructure__metrics": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "basic_infrastructure__signing": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "basic_infrastructure__node_health": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetLedgerEndRequest.java (10)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetLedgerEndResponse.java (10)"
+     ],
+     "hits": 20,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__json": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__grpc": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/SubmitAndWaitForReassignmentRequest.java (5)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/SubmitAndWaitForReassignmentResponse.java (4)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/SubmitAndWaitForTransactionRequest.java (4)"
+     ],
+     "hits": 33,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__internal_commands": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/SubmitAndWaitForReassignmentRequest.java (11)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/SubmitAndWaitForTransactionRequest.java (11)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/SubmitAndWaitForReassignmentResponse.java (10)"
+     ],
+     "hits": 56,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__external_commands": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetPreferredPackagesRequest.java (5)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetPreferredPackagesResponse.java (4)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/PackageVettingRequirement.java (4)"
+     ],
+     "hits": 13,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__deduplication": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/CommandsSubmission.java (68)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/UpdateSubmission.java (42)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/Completion.java (34)"
+     ],
+     "hits": 144,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__command_recovery": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/CompletionStreamResponse.java (17)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/CompletionStreamRequest.java (16)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetCompletionByHashResponse.java (5)"
+     ],
+     "hits": 49,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__batching": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__contract_keys": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/CommandsSubmission.java (32)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/UpdateSubmission.java (20)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/PrefetchContractKey.java (15)"
+     ],
+     "hits": 91,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__explicit_disclosure": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/CommandsSubmission.java (35)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/UpdateSubmission.java (20)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/DisclosedContract.java (19)"
+     ],
+     "hits": 74,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__pending_set": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__package_selection": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/CommandsSubmission.java (24)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/UpdateSubmission.java (15)"
+     ],
+     "hits": 39,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "commands__ha": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__json": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__grpc": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetActiveContractsResponse.java (19)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetUpdatesResponse.java (18)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetUpdatesRequest.java (17)"
+     ],
+     "hits": 143,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__acs_streaming": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetActiveContractsResponse.java (14)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetActiveContractsRequest.java (11)"
+     ],
+     "hits": 25,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__acs_paging": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/ListUsersRequest.java (13)"
+     ],
+     "hits": 13,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__updates_streaming": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetUpdatesResponse.java (14)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetUpdatesRequest.java (12)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetUpdateResponse.java (1)"
+     ],
+     "hits": 27,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__updates_paging": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__reverse_order": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetUpdatesRequest.java (12)"
+     ],
+     "hits": 12,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__interfaces": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/CreatedEvent.java (38)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/Filter.java (19)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/CumulativeFilter.java (17)"
+     ],
+     "hits": 89,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__topology_events": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/TopologyEvent.java (39)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/TopologyTransaction.java (26)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetUpdateResponse.java (22)"
+     ],
+     "hits": 202,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__in_memory_acs": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__resilient_streams": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/ConvertRecordTimeToOffsetRequest.java (24)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/Reassignment.java (18)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/SynchronizerTime.java (16)"
+     ],
+     "hits": 99,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "streams__ha": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "parties__json": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "parties__grpc": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "parties__list_parties": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "parties__local_parties_creation": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "parties__external_parties_creation": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "parties__local_parties_modification": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "parties__external_parties_modification": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "parties__decentralized_party_creation": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "packages__json": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "packages__grpc": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetPackageRequest.java (4)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetPackageStatusRequest.java (4)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetPackageResponse.java (2)"
+     ],
+     "hits": 12,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "packages__upload": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "packages__validation": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "packages__vetting": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "packages__listing": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "packages__package_preference": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetPreferredPackagesResponse.java (13)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetPreferredPackagesRequest.java (11)"
+     ],
+     "hits": 24,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "packages__description": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__list_mappings": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/TopologyTransaction.java (2)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/ParticipantAuthorizationTopologyFormat.java (1)"
+     ],
+     "hits": 3,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__mapping_presentation": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__mapping_construction": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__mapping_signing": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__mapping_submission": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__namespace_delegations": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__decentralized_namespaces": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__owner_to_key_mapping": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__party_to_participant": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__party_to_key_mapping": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__vetted_packages": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__topology_via_admin_api": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "topology__topology_via_ledger_api": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "user__self_inspect": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetUserResponse.java (12)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/ListUserRightsResponse.java (8)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetUserRequest.java (7)"
+     ],
+     "hits": 50,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "user__self_admin": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GrantUserRightsResponse.java (8)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GrantUserRightsRequest.java (7)"
+     ],
+     "hits": 15,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "traffic__traffic_computation": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/Transaction.java (7)"
+     ],
+     "hits": 7,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "traffic__traffic_account_listing_and_inspecting": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "traffic__traffic_account_selection": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "traffic__traffic_top_up": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "multi_synchronizer__listing": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetConnectedSynchronizersResponse.java (24)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetConnectedSynchronizersRequest.java (10)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/ConnectedSynchronizer.java (3)"
+     ],
+     "hits": 37,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "multi_synchronizer__parties": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "multi_synchronizer__packages": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "multi_synchronizer__commands": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/GetEventsByContractIdResponse.java (28)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/CommandsSubmission.java (23)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/DisclosedContract.java (20)"
+     ],
+     "hits": 213,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "multi_synchronizer__streams": {
+     "status": "not_provided",
+     "evidence": [
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/UnassignedEvent.java (57)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/AssignedEvent.java (50)",
+      "community/bindings-java/src/main/java/com/daml/ledger/javaapi/data/ReassignmentCommands.java (37)"
+     ],
+     "hits": 502,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "token_standard__one_step_transfers": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "token_standard__pre_approvals": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "token_standard__allocate": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "token_standard__transfer": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "token_standard__instrument_inspection": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "token_standard__v1": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "token_standard__v2": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "bindings-java contains no client/networking code (data model + codegen runtime only); apps use raw gRPC stubs"
+    },
+    "documentation__user_manual": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Official Java bindings docs on docs.canton.network (language-bindings/java) + Javadoc"
+    },
+    "documentation__tutorials": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Official Java bindings docs on docs.canton.network (language-bindings/java) + Javadoc"
+    },
+    "documentation__examples": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Official Java bindings docs on docs.canton.network (language-bindings/java) + Javadoc"
+    },
+    "documentation__reference": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Official Java bindings docs on docs.canton.network (language-bindings/java) + Javadoc"
+    }
+   }
+  },
+  {
+   "key": "ts",
+   "name": "TypeScript (DA, official)",
+   "repo": "canton-network/wallet",
+   "head": "8b28459 2026-11-18",
+   "files_scanned": 501,
+   "note": "JSON Ledger API only (no gRPC client), wallet-oriented.",
+   "cells": {
+    "codegen_and_bindings__daml_representation": {
+     "status": "found",
+     "evidence": [
+      "core/splice-codegen/src/otc-trade/index.ts (2)",
+      "core/splice-codegen/src/test-token-v2/index.ts (2)",
+      "core/splice-codegen/src/test-token/index.ts (2)"
+     ],
+     "hits": 20
+    },
+    "codegen_and_bindings__json_codec": {
+     "status": "found",
+     "evidence": [
+      "core/rpc-transport/src/index.ts (5)",
+      "core/tx-visualizer/src/index.ts (4)",
+      "sdk/dapp-sdk/src/adapter/walletconnect-adapter.ts (2)"
+     ],
+     "hits": 15
+    },
+    "codegen_and_bindings__grpc_codec": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "JSON Ledger API only by design (no gRPC client; asGrpcError only maps gRPC status codes in JSON error bodies)"
+    },
+    "codegen_and_bindings__json_bindings": {
+     "status": "found",
+     "evidence": [
+      "core/ledger-client/src/ledger-client.ts (11)",
+      "core/splice-client/src/scan-client.ts (6)",
+      "core/splice-client/src/scan-proxy-client.ts (6)"
+     ],
+     "hits": 65
+    },
+    "codegen_and_bindings__grpc_bindings": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "JSON Ledger API only by design (no gRPC client; asGrpcError only maps gRPC status codes in JSON error bodies)"
+    },
+    "codegen_and_bindings__pqs_bindings": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__tls": {
+     "status": "found",
+     "evidence": [
+      "core/signing-securosys/src/signing-api-sdk.ts (27)",
+      "core/signing-securosys/src/index.ts (5)",
+      "core/signing-store-sql/src/schema.ts (2)"
+     ],
+     "hits": 37
+    },
+    "basic_infrastructure__authorization": {
+     "status": "verified",
+     "evidence": [
+      "core/wallet-auth/src/auth-token-provider.ts (24)",
+      "core/wallet-ui-components/src/components/auth-editor.ts (21)",
+      "sdk/wallet-sdk/src/wallet/sdk.ts (19)"
+     ],
+     "hits": 276,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S1 Connect with OAuth2, read version and ledger end"
+    },
+    "basic_infrastructure__error_parsing_and_handling": {
+     "status": "verified",
+     "evidence": [
+      "core/ledger-client/src/ledger-api-utils.ts (27)",
+      "core/ledger-client/src/ledger-client.ts (13)",
+      "core/wallet-services/src/transaction-service.ts (4)"
+     ],
+     "hits": 52,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S7 Error taxonomy"
+    },
+    "basic_infrastructure__tracing": {
+     "status": "not_found",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/logger/types.ts (2)"
+     ],
+     "hits": 2,
+     "review": "Only a traceId field on log entries (logger/types.ts); no OpenTelemetry / W3C trace-context propagation found"
+    },
+    "basic_infrastructure__retry_logic": {
+     "status": "found",
+     "evidence": [
+      "core/ledger-client/src/ledger-api-utils.ts (33)",
+      "core/ledger-client/src/ledger-client.ts (33)",
+      "sdk/wallet-sdk/src/wallet/namespace/amulet/namespace.ts (24)"
+     ],
+     "hits": 155
+    },
+    "basic_infrastructure__logging": {
+     "status": "found",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/logger/logger.ts (23)",
+      "core/wallet-services/src/transaction-service.ts (19)",
+      "sdk/wallet-sdk/src/wallet/sdk.ts (18)"
+     ],
+     "hits": 461
+    },
+    "basic_infrastructure__metrics": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Checked by hand: no metrics instrumentation found"
+    },
+    "basic_infrastructure__signing": {
+     "status": "found",
+     "evidence": [
+      "core/signing-securosys/src/signing-api-sdk.ts (22)",
+      "core/signing-dfns/src/dfns.ts (15)",
+      "core/wallet-test-utils/src/signing-provider-mocks/crypto.ts (13)"
+     ],
+     "hits": 156
+    },
+    "basic_infrastructure__node_health": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Only a one-off GET /v2/version at LedgerClient.init() for version negotiation; no health monitoring"
+    },
+    "commands__json": {
+     "status": "verified",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/namespace/ledger/internal/namespace.ts (4)",
+      "core/ledger-client/src/ledger-api-utils.ts (1)",
+      "core/wallet-services/src/transaction-service.ts (1)"
+     ],
+     "hits": 6,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S5 Exercise a non-consuming choice"
+    },
+    "commands__grpc": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "JSON Ledger API only by design (no gRPC client; asGrpcError only maps gRPC status codes in JSON error bodies)"
+    },
+    "commands__internal_commands": {
+     "status": "verified",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/namespace/ledger/internal/namespace.ts (4)",
+      "sdk/wallet-sdk/src/wallet/namespace/ledger/internal/types.ts (4)"
+     ],
+     "hits": 8,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S4 Create a contract and read it back from the ACS"
+    },
+    "commands__external_commands": {
+     "status": "found",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/namespace/ledger/namespace.ts (12)",
+      "sdk/dapp-sdk/src/__tests__/integration/mock-extension/mock-extension.ts (7)",
+      "sdk/dapp-sdk/src/sdk.ts (7)"
+     ],
+     "hits": 64
+    },
+    "commands__deduplication": {
+     "status": "verified",
+     "evidence": [
+      "core/wallet-services/src/transaction-service.ts (2)",
+      "core/acs-reader/src/cache/collection/base.ts (1)",
+      "sdk/wallet-sdk/src/wallet/namespace/ledger/namespace.ts (1)"
+     ],
+     "hits": 4,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S8 De-duplication and retries under faults: Same command id twice, in turn"
+    },
+    "commands__command_recovery": {
+     "status": "found",
+     "evidence": [
+      "core/asyncapi-client/src/websocket-client.ts (4)",
+      "core/wallet-services/src/transaction-service.ts (2)",
+      "core/ledger-client/src/ledger-api-utils.ts (1)"
+     ],
+     "hits": 8
+    },
+    "commands__batching": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "All hand-written submissions send commands: [single]; no batching helper (generated types allow arrays)"
+    },
+    "commands__contract_keys": {
+     "status": "partial",
+     "evidence": [
+      "core/wallet-dapp-remote-rpc-client/src/index.ts (6)",
+      "core/wallet-dapp-rpc-client/src/index.ts (6)"
+     ],
+     "hits": 12,
+     "review": "Weak: ExerciseByKey command payload passed through dApp RPC types; no key-specific helpers"
+    },
+    "commands__explicit_disclosure": {
+     "status": "found",
+     "evidence": [
+      "core/token-standard-service/src/v1/transfer-service.ts (47)",
+      "sdk/wallet-sdk/src/wallet/namespace/token/utxos/mergeDelegation.ts (26)",
+      "core/token-standard-service/src/v2/allocation-service.ts (19)"
+     ],
+     "hits": 215
+    },
+    "commands__pending_set": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Checked by hand: no pending/in-flight contract tracking found"
+    },
+    "commands__package_selection": {
+     "status": "found",
+     "evidence": [
+      "core/wallet-services/src/utils.ts (5)",
+      "sdk/wallet-sdk/src/wallet/namespace/ledger/internal/namespace.ts (4)",
+      "core/wallet-dapp-remote-rpc-client/src/index.ts (3)"
+     ],
+     "hits": 15
+    },
+    "commands__ha": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__json": {
+     "status": "found",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/namespace/events/namespace.ts (13)",
+      "core/asyncapi-client/src/websocket-client.ts (9)",
+      "core/acs-reader/src/service.ts (4)"
+     ],
+     "hits": 37
+    },
+    "streams__grpc": {
+     "status": "found",
+     "evidence": [
+      "core/acs-reader/src/service.ts (10)",
+      "core/asyncapi-client/src/websocket-client.ts (9)",
+      "core/token-standard-service/src/core-service.ts (9)"
+     ],
+     "hits": 55
+    },
+    "streams__acs_streaming": {
+     "status": "found",
+     "evidence": [
+      "core/acs-reader/src/service.ts (12)",
+      "core/acs-reader/src/reader/base.ts (7)",
+      "core/token-standard-service/src/core-service.ts (4)"
+     ],
+     "hits": 39
+    },
+    "streams__acs_paging": {
+     "status": "verified",
+     "evidence": [
+      "core/acs-reader/src/cache/item/paginatedItem.ts (30)",
+      "core/acs-reader/src/service.ts (21)",
+      "core/acs-reader/src/cache/collection/collection.ts (8)"
+     ],
+     "hits": 93,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S14 ACS reads return every active contract: Every page of the paginated read"
+    },
+    "streams__updates_streaming": {
+     "status": "found",
+     "evidence": [
+      "core/asyncapi-client/src/websocket-client.ts (9)",
+      "core/token-standard-service/src/core-service.ts (5)",
+      "core/token-standard-service/src/token-standard-service.ts (5)"
+     ],
+     "hits": 24
+    },
+    "streams__updates_paging": {
+     "status": "found",
+     "evidence": [
+      "core/acs-reader/src/cache/collection/collection.ts (1)",
+      "core/acs-reader/src/cache/item/item.ts (1)"
+     ],
+     "hits": 2
+    },
+    "streams__reverse_order": {
+     "status": "not_found",
+     "evidence": [
+      "core/wallet-store-sql/src/store-sql.ts (6)",
+      "core/signing-store-sql/src/store-sql.ts (2)"
+     ],
+     "hits": 8,
+     "review": "Scan hit was ORDER BY in the wallet SQL store, not a Ledger API stream"
+    },
+    "streams__interfaces": {
+     "status": "found",
+     "evidence": [
+      "core/tx-parser/src/utils.ts (23)",
+      "core/token-standard-service/src/core-service.ts (13)",
+      "core/tx-parser/src/parser.ts (13)"
+     ],
+     "hits": 77
+    },
+    "streams__topology_events": {
+     "status": "not_found",
+     "evidence": [
+      "core/wallet-store-sql/src/schema.ts (13)",
+      "core/tx-visualizer/src/index.ts (8)",
+      "core/wallet-store-sql/src/migrations/006-change-wallet-primary-key-to-composite.ts (6)"
+     ],
+     "hits": 52,
+     "review": "Scan hits were stored topologyTransactions strings for party onboarding; no topology-event stream consumption"
+    },
+    "streams__in_memory_acs": {
+     "status": "found",
+     "evidence": [
+      "core/acs-reader/src/cache/item/paginatedItem.ts (10)",
+      "core/acs-reader/src/cache/collection/collection.ts (9)",
+      "core/acs-reader/src/cache/collection/base.ts (7)"
+     ],
+     "hits": 33
+    },
+    "streams__resilient_streams": {
+     "status": "found",
+     "evidence": [
+      "core/tx-hashing/src/v2.ts (4)",
+      "core/tx-hashing/src/v3.ts (3)",
+      "sdk/wallet-sdk/src/wallet/init/synchronizer.ts (3)"
+     ],
+     "hits": 17
+    },
+    "streams__ha": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__json": {
+     "status": "verified",
+     "evidence": [
+      "core/ledger-client/src/ledger-client.ts (3)",
+      "sdk/wallet-sdk/src/wallet/namespace/party/internal/index.ts (3)",
+      "sdk/wallet-sdk/src/wallet/namespace/amulet/traffic.ts (2)"
+     ],
+     "hits": 13,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S2 Allocate a party and list it"
+    },
+    "parties__grpc": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "JSON Ledger API only by design (no gRPC client; asGrpcError only maps gRPC status codes in JSON error bodies)"
+    },
+    "parties__list_parties": {
+     "status": "verified",
+     "evidence": [],
+     "hits": 0,
+     "review": "Partial: GET /v2/parties then client-side isLocal filter (party/namespace.ts); no server-side filter options exposed | Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S2 Allocate a party and list it"
+    },
+    "parties__local_parties_creation": {
+     "status": "verified",
+     "evidence": [
+      "core/wallet-user-rpc-client/src/index.ts (8)",
+      "core/wallet-services/src/self-issued-auth-service.ts (3)",
+      "sdk/wallet-sdk/src/wallet/namespace/party/external/signed.ts (3)"
+     ],
+     "hits": 14,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S2 Allocate a party and list it"
+    },
+    "parties__external_parties_creation": {
+     "status": "found",
+     "evidence": [
+      "core/ledger-client/src/ledger-client.ts (7)",
+      "sdk/wallet-sdk/src/wallet/namespace/party/external/signed.ts (5)",
+      "sdk/wallet-sdk/src/wallet/namespace/party/namespace.ts (3)"
+     ],
+     "hits": 17
+    },
+    "parties__local_parties_modification": {
+     "status": "not_found",
+     "evidence": [
+      "core/tx-visualizer/src/index.ts (4)"
+     ],
+     "hits": 4,
+     "review": "Scan hit was a local helper in tx-visualizer; no UpdatePartyDetails / PATCH /v2/parties/{party} call"
+    },
+    "parties__external_parties_modification": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__decentralized_party_creation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "packages__json": {
+     "status": "found",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/namespace/ledger/dar/index.ts (2)"
+     ],
+     "hits": 2
+    },
+    "packages__grpc": {
+     "status": "not_provided",
+     "evidence": [],
+     "hits": 0,
+     "review": "JSON Ledger API only by design (no gRPC client; asGrpcError only maps gRPC status codes in JSON error bodies)"
+    },
+    "packages__upload": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "sdk ledger.dar: POST /v2/packages with synchronizerId + vetAllPackages (dar/index.ts)"
+    },
+    "packages__validation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "/v2/dars/validate exists only in generated OpenAPI types; no hand-written call"
+    },
+    "packages__vetting": {
+     "status": "found",
+     "evidence": [
+      "core/splice-codegen/src/otc-trade/utils.ts (3)",
+      "core/splice-codegen/src/test-token-v2/utils.ts (3)",
+      "core/splice-codegen/src/test-token/utils.ts (3)"
+     ],
+     "hits": 13
+    },
+    "packages__listing": {
+     "status": "partial",
+     "evidence": [],
+     "hits": 0,
+     "review": "Partial: GET /v2/packages, used only to check whether a package id is present (dar/index.ts check()); no filtering by name/synchronizer"
+    },
+    "packages__package_preference": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "/v2/interactive-submission/preferred-packages exists only in generated types; package_id_selection_preference is passed through on commands (see commands__package_selection)"
+    },
+    "packages__description": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "/v2/packages/{package-id} exists only in generated types; no hand-written call"
+    },
+    "topology__list_mappings": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_presentation": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_construction": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_signing": {
+     "status": "found",
+     "evidence": [
+      "core/signing-bitgo/src/bitgo.ts (1)"
+     ],
+     "hits": 1,
+     "review": "sdk utils.hash.topologyTransaction(): multi-hash of prepared topology txs for external signing (utils/hash/service.ts)"
+    },
+    "topology__mapping_submission": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__namespace_delegations": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__decentralized_namespaces": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__owner_to_key_mapping": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__party_to_participant": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__party_to_key_mapping": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__vetted_packages": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__topology_via_admin_api": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Admin API not used; topology only via Ledger API external-party endpoints"
+    },
+    "topology__topology_via_ledger_api": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "External party onboarding via /v2/parties/external/generate-topology + /v2/parties/external/allocate"
+    },
+    "user__self_inspect": {
+     "status": "found",
+     "evidence": [
+      "core/wallet-user-rpc-client/src/index.ts (6)",
+      "core/signing-store-sql/src/__tests__/migrations/global-setup.ts (1)",
+      "core/wallet-store-inmemory/src/store-internal.ts (1)"
+     ],
+     "hits": 11
+    },
+    "user__self_admin": {
+     "status": "found",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/namespace/party/external/signed.ts (8)",
+      "core/ledger-client/src/ledger-client.ts (1)",
+      "sdk/wallet-sdk/src/wallet/namespace/party/external/prepared.ts (1)"
+     ],
+     "hits": 10
+    },
+    "traffic__traffic_computation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "traffic__traffic_account_listing_and_inspecting": {
+     "status": "found",
+     "evidence": [
+      "core/amulet-service/src/amulet-service.ts (3)",
+      "core/amulet-service/src/amulet-service-base.ts (2)",
+      "core/amulet-service/src/amulet-service-scan-proxy.ts (2)"
+     ],
+     "hits": 10,
+     "review": "amulet.traffic.status() (amulet/traffic.ts)"
+    },
+    "traffic__traffic_account_selection": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "traffic__traffic_top_up": {
+     "status": "found",
+     "evidence": [
+      "core/amulet-service/src/amulet-service.ts (6)",
+      "core/amulet-service/src/amulet-service-base.ts (4)",
+      "sdk/wallet-sdk/src/wallet/namespace/amulet/traffic.ts (2)"
+     ],
+     "hits": 14,
+     "review": "amulet.traffic.buy() (amulet/traffic.ts)"
+    },
+    "multi_synchronizer__listing": {
+     "status": "found",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/init/synchronizer.ts (10)",
+      "sdk/wallet-sdk/src/wallet/namespace/ledger/namespace.ts (3)",
+      "sdk/wallet-sdk/src/wallet/namespace/party/external/signed.ts (2)"
+     ],
+     "hits": 16
+    },
+    "multi_synchronizer__parties": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__packages": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__commands": {
+     "status": "found",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/namespace/party/external/signed.ts (27)",
+      "sdk/wallet-sdk/src/wallet/namespace/amulet/namespace.ts (15)",
+      "core/ledger-client/src/ledger-client.ts (14)"
+     ],
+     "hits": 232
+    },
+    "multi_synchronizer__streams": {
+     "status": "found",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/namespace/ledger/internal/namespace.ts (36)",
+      "sdk/wallet-sdk/src/wallet/namespace/ledger/internal/types.ts (10)",
+      "core/token-standard-service/src/core-service.ts (2)"
+     ],
+     "hits": 51
+    },
+    "token_standard__one_step_transfers": {
+     "status": "found",
+     "evidence": [
+      "core/amulet-service/src/amulet-service.ts (9)",
+      "sdk/wallet-sdk/src/wallet/namespace/amulet/preapproval.ts (9)",
+      "core/amulet-service/src/amulet-service-base.ts (6)"
+     ],
+     "hits": 28
+    },
+    "token_standard__pre_approvals": {
+     "status": "found",
+     "evidence": [
+      "sdk/wallet-sdk/src/wallet/namespace/amulet/preapproval.ts (51)",
+      "core/amulet-service/src/amulet-service.ts (9)",
+      "core/amulet-service/src/amulet-service-base.ts (7)"
+     ],
+     "hits": 90
+    },
+    "token_standard__allocate": {
+     "status": "found",
+     "evidence": [
+      "core/token-standard-service/src/v2/allocation-service.ts (63)",
+      "core/token-standard-service/src/v1/allocation-service.ts (49)",
+      "core/splice-codegen/src/test-token-v2/commands.ts (43)"
+     ],
+     "hits": 442
+    },
+    "token_standard__transfer": {
+     "status": "found",
+     "evidence": [
+      "core/token-standard-service/src/v1/transfer-service.ts (99)",
+      "core/tx-parser/src/parser.ts (90)",
+      "core/splice-codegen/src/test-token-v2/commands.ts (41)"
+     ],
+     "hits": 399
+    },
+    "token_standard__instrument_inspection": {
+     "status": "found",
+     "evidence": [
+      "core/tx-parser/src/parser.ts (27)",
+      "core/wallet-test-utils/src/otc-trade-v2.ts (15)",
+      "core/token-standard-service/src/core-service.ts (13)"
+     ],
+     "hits": 146
+    },
+    "token_standard__v1": {
+     "status": "found",
+     "evidence": [
+      "core/token-standard/src/types.ts (16)",
+      "core/token-standard/src/interface-ids.const.ts (14)",
+      "core/token-standard/src/models/Splice/Api/Token/index.ts (8)"
+     ],
+     "hits": 46
+    },
+    "token_standard__v2": {
+     "status": "found",
+     "evidence": [
+      "core/token-standard-v2/src/types.ts (16)",
+      "core/token-standard-v2/src/interface-ids.const.ts (15)",
+      "core/token-standard-v2/src/models/Splice/Api/Token/index.ts (8)"
+     ],
+     "hits": 65
+    },
+    "documentation__user_manual": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "docs/ (dapp-sdk guides, wallet-integration-guide, dapp-building) + examples/; API reference tooling not found in repo"
+    },
+    "documentation__tutorials": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "docs/ (dapp-sdk guides, wallet-integration-guide, dapp-building) + examples/; API reference tooling not found in repo"
+    },
+    "documentation__examples": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "docs/ (dapp-sdk guides, wallet-integration-guide, dapp-building) + examples/; API reference tooling not found in repo"
+    },
+    "documentation__reference": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0,
+     "review": "docs/ (dapp-sdk guides, wallet-integration-guide, dapp-building) + examples/; API reference tooling not found in repo"
+    }
+   }
+  },
+  {
+   "key": "python",
+   "name": "Python dazl (DA)",
+   "repo": "digital-asset/dazl-client",
+   "head": "e4e7090 2026-11-12",
+   "files_scanned": 90,
+   "note": "Hand-written client is Ledger API v1 / Canton 2.x; v2 only as raw generated JSON client (dazl.api).",
+   "cells": {
+    "codegen_and_bindings__daml_representation": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/damlast/parse.py (13)",
+      "python/dazl/damlast/errors.py (10)",
+      "python/dazl/values/context.py (10)"
+     ],
+     "hits": 96
+    },
+    "codegen_and_bindings__json_codec": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/prim/json.py (5)",
+      "python/dazl/values/json.py (4)",
+      "python/dazl/pretty/table/fmt_json.py (2)"
+     ],
+     "hits": 15
+    },
+    "codegen_and_bindings__grpc_codec": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "codegen_and_bindings__json_bindings": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/api/__init__.py (3)"
+     ],
+     "hits": 3,
+     "review": "Raw generated OpenAPI v2 function re-exported in dazl.api; nothing bridges them to dazl Daml values/codegen"
+    },
+    "codegen_and_bindings__grpc_bindings": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/ledger/grpc/channel.py (1)",
+      "python/dazl/ledger/grpc/conn_aio.py (1)"
+     ],
+     "hits": 2,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "codegen_and_bindings__pqs_bindings": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__tls": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/ledger/config/__init__.py (17)",
+      "python/dazl/ledger/grpc/channel.py (10)",
+      "python/dazl/ledger/config/argv.py (8)"
+     ],
+     "hits": 48
+    },
+    "basic_infrastructure__authorization": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (25)",
+      "python/dazl/ledger/grpc/codec_aio.py (15)",
+      "python/dazl/ledger/aio/pkgloader.py (7)"
+     ],
+     "hits": 74
+    },
+    "basic_infrastructure__error_parsing_and_handling": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/damlast/protocols.py (2)",
+      "python/dazl/ledger/_retry.py (2)",
+      "python/dazl/damlast/errors.py (1)"
+     ],
+     "hits": 9
+    },
+    "basic_infrastructure__tracing": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__retry_logic": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (35)",
+      "python/dazl/ledger/config/url.py (17)",
+      "python/dazl/ledger/_retry.py (7)"
+     ],
+     "hits": 86
+    },
+    "basic_infrastructure__logging": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/_logging.py (57)",
+      "python/dazl/ledger/config/__init__.py (39)",
+      "python/dazl/ledger/config/url.py (28)"
+     ],
+     "hits": 169
+    },
+    "basic_infrastructure__metrics": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__signing": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__node_health": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (4)",
+      "python/dazl/util/proc_util.py (1)"
+     ],
+     "hits": 5,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "commands__json": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Raw generated OpenAPI v2 function re-exported in dazl.api (post_v2_commands_submit_and_wait, async_submit); no wrapper"
+    },
+    "commands__grpc": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (5)",
+      "python/dazl/ledger/grpc/codec_aio.py (1)"
+     ],
+     "hits": 6,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "commands__internal_commands": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (13)",
+      "python/dazl/api/__init__.py (4)"
+     ],
+     "hits": 17,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard. v2 only via raw dazl.api.post_v2_commands_submit_and_wait."
+    },
+    "commands__external_commands": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/api/__init__.py (4)"
+     ],
+     "hits": 4,
+     "review": "Only preferred-package endpoints re-exported; no prepare/execute interactive submission"
+    },
+    "commands__deduplication": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (47)",
+      "python/dazl/ledger/api_types.py (31)",
+      "python/dazl/ledger/_call.py (14)"
+     ],
+     "hits": 96,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "commands__command_recovery": {
+     "status": "partial",
+     "evidence": [
+      "python/dazl/api/__init__.py (2)"
+     ],
+     "hits": 2,
+     "review": "Weak: Raw generated OpenAPI v2 function re-exported in dazl.api (post_v2_commands_completions)"
+    },
+    "commands__batching": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "commands__contract_keys": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/damlast/parse_factory/pb_v1.py (8)",
+      "python/dazl/damlast/parse_factory/pb_v2.py (8)",
+      "python/dazl/ledger/api_types.py (8)"
+     ],
+     "hits": 49,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "commands__explicit_disclosure": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "commands__pending_set": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Checked by hand: none"
+    },
+    "commands__package_selection": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "commands__ha": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__json": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "No updates/ACS streaming endpoints in dazl.api re-exports"
+    },
+    "streams__grpc": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (2)"
+     ],
+     "hits": 2,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "streams__acs_streaming": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (2)",
+      "python/dazl/ledgerutil/acs.py (1)"
+     ],
+     "hits": 3,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "streams__acs_paging": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__updates_streaming": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__updates_paging": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__reverse_order": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/values/context.py (5)"
+     ],
+     "hits": 5,
+     "review": "Scan hit was in values/context.py, unrelated to stream ordering"
+    },
+    "streams__interfaces": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/ledger/api_types.py (8)",
+      "python/dazl/ledger/grpc/codec_aio.py (7)"
+     ],
+     "hits": 15,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "streams__topology_events": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__in_memory_acs": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__resilient_streams": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/ledgerutil/acs.py (8)",
+      "python/dazl/ledger/grpc/conn_aio.py (6)",
+      "python/dazl/ledger/api_types.py (1)"
+     ],
+     "hits": 15,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "streams__ha": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__json": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Raw generated OpenAPI v2 function re-exported in dazl.api (get/post/patch_v2_parties); no wrapper"
+    },
+    "parties__grpc": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (2)"
+     ],
+     "hits": 2,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "parties__list_parties": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (3)",
+      "python/dazl/api/__init__.py (2)",
+      "python/dazl/ledger/blocking/_aiowrapper.py (2)"
+     ],
+     "hits": 7,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard. v2 listing only via raw dazl.api.get_v2_parties."
+    },
+    "parties__local_parties_creation": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/api/__init__.py (4)",
+      "python/dazl/ledger/grpc/conn_aio.py (3)",
+      "python/dazl/ledger/blocking/_aiowrapper.py (2)"
+     ],
+     "hits": 10,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard. v2 only via raw dazl.api.post_v2_parties."
+    },
+    "parties__external_parties_creation": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/api/__init__.py (6)"
+     ],
+     "hits": 6,
+     "review": "Raw generated OpenAPI v2 function re-exported in dazl.api (post_v2_parties_external_generate_topology / _allocate); no signing helper"
+    },
+    "parties__local_parties_modification": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/api/__init__.py (2)"
+     ],
+     "hits": 2,
+     "review": "Raw generated OpenAPI v2 function re-exported in dazl.api (patch_v2_parties_party)"
+    },
+    "parties__external_parties_modification": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__decentralized_party_creation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "packages__json": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Raw generated OpenAPI v2 function re-exported in dazl.api (get/post_v2_packages); no wrapper"
+    },
+    "packages__grpc": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/damlast/pkgfile.py (6)",
+      "python/dazl/ledger/aio/pkgloader.py (5)",
+      "python/dazl/ledger/grpc/conn_aio.py (3)"
+     ],
+     "hits": 22,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "packages__upload": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (2)"
+     ],
+     "hits": 2,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard. v2 only via raw dazl.api.post_v2_packages."
+    },
+    "packages__validation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "packages__vetting": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/api/__init__.py (4)"
+     ],
+     "hits": 4,
+     "review": "Raw generated OpenAPI v2 function re-exported in dazl.api (get_v2_package_vetting, post_v2_package_vetting_list); read-only"
+    },
+    "packages__listing": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/api/__init__.py (2)",
+      "python/dazl/ledger/grpc/conn_aio.py (2)"
+     ],
+     "hits": 4,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard. v2 only via raw dazl.api.get_v2_packages."
+    },
+    "packages__package_preference": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/api/__init__.py (10)"
+     ],
+     "hits": 10,
+     "review": "Raw generated OpenAPI v2 function re-exported in dazl.api (post_v2_interactive_submission_preferred_packages)"
+    },
+    "packages__description": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/ledger/blocking/_aiowrapper.py (2)",
+      "python/dazl/ledger/grpc/conn_aio.py (2)",
+      "python/dazl/damlast/pkgfile.py (1)"
+     ],
+     "hits": 9,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard."
+    },
+    "topology__list_mappings": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_presentation": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_construction": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_signing": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_submission": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__namespace_delegations": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__decentralized_namespaces": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__owner_to_key_mapping": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__party_to_participant": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__party_to_key_mapping": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__vetted_packages": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/api/__init__.py (4)"
+     ],
+     "hits": 4,
+     "review": "Raw generated OpenAPI v2 function re-exported in dazl.api (package vetting list); read-only"
+    },
+    "topology__topology_via_admin_api": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__topology_via_ledger_api": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "user__self_inspect": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/ledger/grpc/conn_aio.py (6)",
+      "python/dazl/ledger/grpc/_args_aio.py (4)",
+      "python/dazl/api/__init__.py (2)"
+     ],
+     "hits": 14,
+     "review": "dazl hand-written client targets Ledger API v1 / Canton 2.x (README: 'not intended for use with Canton 3.x') \u2014 v1 implementation does not count toward this v2 standard. v2 only via raw dazl.api.get_v2_users_user_id(_rights)."
+    },
+    "user__self_admin": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/api/__init__.py (4)"
+     ],
+     "hits": 4,
+     "review": "Raw generated OpenAPI v2 function re-exported in dazl.api (patch_v2_users_user_id)"
+    },
+    "traffic__traffic_computation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "traffic__traffic_account_listing_and_inspecting": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "traffic__traffic_account_selection": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "traffic__traffic_top_up": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__listing": {
+     "status": "found",
+     "evidence": [
+      "python/dazl/api/__init__.py (2)"
+     ],
+     "hits": 2,
+     "review": "Raw generated OpenAPI v2 function re-exported in dazl.api (get_v2_state_connected_synchronizers)"
+    },
+    "multi_synchronizer__parties": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__packages": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__commands": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__streams": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__one_step_transfers": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__pre_approvals": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__allocate": {
+     "status": "not_found",
+     "evidence": [
+      "python/dazl/api/__init__.py (10)",
+      "python/dazl/testing/connect.py (5)",
+      "python/dazl/ledger/grpc/conn_aio.py (4)"
+     ],
+     "hits": 21,
+     "review": "Scan hit was AllocateParty, not token-standard allocation; dazl has no token-standard support"
+    },
+    "token_standard__transfer": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__instrument_inspection": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__v1": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__v2": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "documentation__user_manual": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Sphinx docs/ (basics.rst + per-module API .rst); no tutorials or examples dir"
+    },
+    "documentation__tutorials": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Sphinx docs/ (basics.rst + per-module API .rst); no tutorials or examples dir"
+    },
+    "documentation__examples": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Sphinx docs/ (basics.rst + per-module API .rst); no tutorials or examples dir"
+    },
+    "documentation__reference": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Sphinx docs/ (basics.rst + per-module API .rst); no tutorials or examples dir"
+    }
+   }
+  },
+  {
+   "key": "rust_nodejumper",
+   "name": "Rust (Nodejumper)",
+   "repo": "nodejumper-org/canton-rust-sdk",
+   "head": "8d8a92b 2026-10-25",
+   "files_scanned": 70,
+   "note": "",
+   "cells": {
+    "codegen_and_bindings__daml_representation": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-codegen/src/lib.rs (33)",
+      "crates/canton-lf/src/decode.rs (25)",
+      "crates/canton-lf/src/lib.rs (19)"
+     ],
+     "hits": 159
+    },
+    "codegen_and_bindings__json_codec": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-daml/src/lib.rs (39)",
+      "crates/canton-ledger/src/update.rs (34)",
+      "crates/canton-token/src/registry.rs (28)"
+     ],
+     "hits": 272
+    },
+    "codegen_and_bindings__grpc_codec": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-daml/src/lib.rs (128)",
+      "crates/canton-daml/src/value.rs (114)",
+      "crates/canton-codegen/src/emit.rs (37)"
+     ],
+     "hits": 364
+    },
+    "codegen_and_bindings__json_bindings": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/json.rs (38)",
+      "crates/canton-core/src/error.rs (10)",
+      "crates/canton-core/src/localnet.rs (7)"
+     ],
+     "hits": 77
+    },
+    "codegen_and_bindings__grpc_bindings": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-core/src/error.rs (75)",
+      "crates/canton-ledger/src/client.rs (7)",
+      "crates/canton-core/src/auth.rs (6)"
+     ],
+     "hits": 114
+    },
+    "codegen_and_bindings__pqs_bindings": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-pqs/src/client.rs (21)",
+      "crates/canton/src/lib.rs (9)",
+      "crates/canton-pqs/src/row.rs (8)"
+     ],
+     "hits": 47
+    },
+    "basic_infrastructure__tls": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-core/src/config.rs (58)",
+      "crates/canton-pqs/src/client.rs (55)",
+      "crates/canton-ledger/src/json.rs (37)"
+     ],
+     "hits": 197
+    },
+    "basic_infrastructure__authorization": {
+     "status": "verified",
+     "evidence": [
+      "crates/canton-auth/src/lib.rs (28)",
+      "crates/canton-core/src/config.rs (13)",
+      "crates/canton-core/src/auth.rs (12)"
+     ],
+     "hits": 112,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S1 Connect with OAuth2, read version and ledger end"
+    },
+    "basic_infrastructure__error_parsing_and_handling": {
+     "status": "verified",
+     "evidence": [
+      "crates/canton-core/src/error.rs (156)",
+      "crates/canton-pqs/src/client.rs (20)",
+      "crates/canton-core/src/telemetry.rs (13)"
+     ],
+     "hits": 264,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S7 Error taxonomy"
+    },
+    "basic_infrastructure__tracing": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-core/src/telemetry.rs (114)",
+      "crates/canton/src/lib.rs (9)",
+      "crates/canton-core/src/error.rs (6)"
+     ],
+     "hits": 138
+    },
+    "basic_infrastructure__retry_logic": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-core/src/retry.rs (97)",
+      "crates/canton-core/src/error.rs (76)",
+      "crates/canton-ledger/src/client.rs (63)"
+     ],
+     "hits": 363
+    },
+    "basic_infrastructure__logging": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-core/src/telemetry.rs (15)",
+      "crates/canton-token/src/v2/events.rs (6)",
+      "crates/canton-ledger/src/client.rs (4)"
+     ],
+     "hits": 35
+    },
+    "basic_infrastructure__metrics": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-core/src/telemetry.rs (91)",
+      "crates/canton-core/src/lib.rs (1)",
+      "crates/canton-daml/src/lib.rs (1)"
+     ],
+     "hits": 95
+    },
+    "basic_infrastructure__signing": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-signer/src/ed25519.rs (85)",
+      "crates/canton-signer/src/signature.rs (56)",
+      "crates/canton-ledger/src/interactive.rs (50)"
+     ],
+     "hits": 249
+    },
+    "basic_infrastructure__node_health": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/client.rs (17)",
+      "crates/canton-ledger/examples/version_and_health.rs (4)",
+      "crates/canton-ledger/src/lib.rs (3)"
+     ],
+     "hits": 24
+    },
+    "commands__json": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/json.rs (8)",
+      "crates/canton-ledger/src/submission.rs (1)"
+     ],
+     "hits": 9
+    },
+    "commands__grpc": {
+     "status": "verified",
+     "evidence": [
+      "crates/canton-ledger/src/client.rs (8)",
+      "crates/canton-ledger/src/submission.rs (2)"
+     ],
+     "hits": 10,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S5 Exercise a non-consuming choice"
+    },
+    "commands__internal_commands": {
+     "status": "verified",
+     "evidence": [
+      "crates/canton-ledger/src/client.rs (19)",
+      "crates/canton-ledger/src/submission.rs (11)",
+      "crates/canton-ledger/src/json.rs (6)"
+     ],
+     "hits": 54,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S4 Create a contract and read it back from the ACS"
+    },
+    "commands__external_commands": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/interactive.rs (39)",
+      "crates/canton-ledger/src/client.rs (31)",
+      "crates/canton-signer/src/lib.rs (5)"
+     ],
+     "hits": 79
+    },
+    "commands__deduplication": {
+     "status": "verified",
+     "evidence": [
+      "crates/canton-ledger/src/interactive.rs (48)",
+      "crates/canton-ledger/src/command.rs (24)",
+      "crates/canton-ledger/src/json.rs (10)"
+     ],
+     "hits": 87,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S8 De-duplication and retries under faults: Same command id twice, in turn"
+    },
+    "commands__command_recovery": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/client.rs (9)",
+      "crates/canton-ledger/src/submission.rs (3)",
+      "crates/canton-ledger/examples/recover_a_submission.rs (2)"
+     ],
+     "hits": 20
+    },
+    "commands__batching": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Confirmed: The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "commands__contract_keys": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/command.rs (11)",
+      "crates/canton-ledger/src/interactive.rs (8)",
+      "crates/canton-daml/src/lib.rs (6)"
+     ],
+     "hits": 32
+    },
+    "commands__explicit_disclosure": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-token/src/context.rs (23)",
+      "crates/canton-token/src/transfer.rs (20)",
+      "crates/canton-ledger/src/interactive.rs (15)"
+     ],
+     "hits": 95
+    },
+    "commands__pending_set": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Confirmed: The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "commands__package_selection": {
+     "status": "partial",
+     "evidence": [
+      "crates/canton-ledger/src/command.rs (8)",
+      "crates/canton-ledger/src/interactive.rs (6)",
+      "crates/canton-ledger/src/json.rs (6)"
+     ],
+     "hits": 20,
+     "review": "Partial: CommandBuilder::with_package_id_selection_preference() passes the preference through; no check against vetting state. The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "commands__ha": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "streams__json": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/json.rs (35)",
+      "crates/canton-ledger/src/ws.rs (15)",
+      "crates/canton-core/src/config.rs (4)"
+     ],
+     "hits": 63
+    },
+    "streams__grpc": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/client.rs (15)",
+      "crates/canton-core/src/config.rs (2)",
+      "crates/canton-ledger/src/request.rs (2)"
+     ],
+     "hits": 19
+    },
+    "streams__acs_streaming": {
+     "status": "verified",
+     "evidence": [
+      "crates/canton-ledger/src/json.rs (6)",
+      "crates/canton-core/src/config.rs (2)",
+      "crates/canton-ledger/src/client.rs (2)"
+     ],
+     "hits": 13,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S4 Create a contract and read it back from the ACS"
+    },
+    "streams__acs_paging": {
+     "status": "verified",
+     "evidence": [
+      "crates/canton-ledger/src/client.rs (34)",
+      "crates/canton-admin/src/client.rs (13)",
+      "crates/canton-ledger/src/json.rs (10)"
+     ],
+     "hits": 69,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S14 ACS reads return every active contract: Every page of the paginated read"
+    },
+    "streams__updates_streaming": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/json.rs (14)",
+      "crates/canton-ledger/src/request.rs (4)",
+      "crates/canton-core/src/config.rs (2)"
+     ],
+     "hits": 24
+    },
+    "streams__updates_paging": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/client.rs (11)",
+      "crates/canton-ledger/src/json.rs (4)",
+      "crates/canton-sample/src/main.rs (1)"
+     ],
+     "hits": 16
+    },
+    "streams__reverse_order": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/request.rs (19)",
+      "crates/canton-ledger/src/client.rs (18)",
+      "crates/canton-codegen/src/lower.rs (1)"
+     ],
+     "hits": 38
+    },
+    "streams__interfaces": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/request.rs (10)",
+      "crates/canton-ledger/src/update.rs (1)"
+     ],
+     "hits": 11
+    },
+    "streams__topology_events": {
+     "status": "partial",
+     "evidence": [
+      "crates/canton-ledger/src/update.rs (18)",
+      "crates/canton-ledger/src/request.rs (16)",
+      "crates/canton-admin/src/external_party.rs (15)"
+     ],
+     "hits": 52,
+     "review": "Partial: Update::TopologyTransaction is decoded on the update stream (update.rs); no subscription/processing helpers. The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "streams__in_memory_acs": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Confirmed: The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "streams__resilient_streams": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/client.rs (38)",
+      "crates/canton-ledger/src/json.rs (37)",
+      "crates/canton-ledger/src/update.rs (25)"
+     ],
+     "hits": 121
+    },
+    "streams__ha": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "parties__json": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/json.rs (13)"
+     ],
+     "hits": 13
+    },
+    "parties__grpc": {
+     "status": "verified",
+     "evidence": [
+      "crates/canton-admin/src/client.rs (11)",
+      "crates/canton-admin/src/lib.rs (2)"
+     ],
+     "hits": 13,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S2 Allocate a party and list it"
+    },
+    "parties__list_parties": {
+     "status": "verified",
+     "evidence": [
+      "crates/canton-admin/src/client.rs (10)",
+      "crates/canton-ledger/src/json.rs (7)",
+      "crates/canton-core/src/config.rs (1)"
+     ],
+     "hits": 18,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S2 Allocate a party and list it"
+    },
+    "parties__local_parties_creation": {
+     "status": "verified",
+     "evidence": [
+      "crates/canton-ledger/src/json.rs (20)",
+      "crates/canton-admin/src/client.rs (7)",
+      "crates/canton-admin/src/lib.rs (1)"
+     ],
+     "hits": 29,
+     "review": "Verified on LocalNet (run 20261120-123910 UTC, Canton 3.7.3): S2 Allocate a party and list it"
+    },
+    "parties__external_parties_creation": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-admin/src/external_party.rs (27)",
+      "crates/canton-admin/src/client.rs (26)",
+      "crates/canton-admin/src/lib.rs (3)"
+     ],
+     "hits": 62
+    },
+    "parties__local_parties_modification": {
+     "status": "partial",
+     "evidence": [
+      "crates/canton-ledger/src/json.rs (5)",
+      "crates/canton-admin/src/lib.rs (1)"
+     ],
+     "hits": 6,
+     "review": "Partial: JSON client update_party_details() (json.rs). The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "parties__external_parties_modification": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Confirmed: The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "parties__decentralized_party_creation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Confirmed: The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "packages__json": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/json.rs (4)"
+     ],
+     "hits": 4
+    },
+    "packages__grpc": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-admin/src/client.rs (7)"
+     ],
+     "hits": 7
+    },
+    "packages__upload": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Confirmed: The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "packages__validation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Checked by hand: no ValidateDarFile / validate call. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "packages__vetting": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-admin/src/topology.rs (6)",
+      "crates/canton-admin/src/external_party.rs (2)"
+     ],
+     "hits": 8
+    },
+    "packages__listing": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-admin/src/client.rs (5)",
+      "crates/canton-ledger/src/json.rs (3)",
+      "crates/canton-admin/examples/fetch_packages.rs (2)"
+     ],
+     "hits": 11
+    },
+    "packages__package_preference": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Confirmed: The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "packages__description": {
+     "status": "partial",
+     "evidence": [
+      "crates/canton-admin/src/client.rs (4)",
+      "crates/canton-admin/examples/fetch_packages.rs (1)",
+      "crates/canton-codegen/src/lower.rs (1)"
+     ],
+     "hits": 7,
+     "review": "Partial: get_package() returns raw bytes and get_package_status() (canton-admin client.rs); no package/type descriptors. The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "topology__list_mappings": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-admin/src/topology.rs (11)",
+      "crates/canton-admin/src/lib.rs (1)"
+     ],
+     "hits": 12
+    },
+    "topology__mapping_presentation": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_construction": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "No TopologyManagerWriteService client; topology is built only by the participant during external-party onboarding. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "topology__mapping_signing": {
+     "status": "partial",
+     "evidence": [],
+     "hits": 0,
+     "review": "Partial: external_party.rs computes the topology multi_hash that a canton_signer key signs during onboarding; no general topology signing. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "topology__mapping_submission": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "No AddTransactions client. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "topology__namespace_delegations": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-admin/src/topology.rs (6)",
+      "crates/canton-admin/src/external_party.rs (5)"
+     ],
+     "hits": 11
+    },
+    "topology__decentralized_namespaces": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Confirmed: The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "topology__owner_to_key_mapping": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Only a test stub (tests/topology_inprocess.rs); no client method. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "topology__party_to_participant": {
+     "status": "partial",
+     "evidence": [
+      "crates/canton-admin/src/topology.rs (6)",
+      "crates/canton-admin/src/external_party.rs (4)"
+     ],
+     "hits": 10,
+     "review": "Read-only: TopologyClient::list_party_to_participant() via Admin API (topology.rs); no create/change. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "topology__party_to_key_mapping": {
+     "status": "not_found",
+     "evidence": [
+      "crates/canton-admin/src/external_party.rs (3)"
+     ],
+     "hits": 3,
+     "review": "Scan hits were doc comments in the external-party onboarding flow; no PartyToKeyMapping management. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "topology__vetted_packages": {
+     "status": "partial",
+     "evidence": [
+      "crates/canton-admin/src/topology.rs (6)",
+      "crates/canton-admin/src/external_party.rs (2)"
+     ],
+     "hits": 8,
+     "review": "Read-only: TopologyClient::list_vetted_packages() via Admin API (topology.rs). Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "topology__topology_via_admin_api": {
+     "status": "partial",
+     "evidence": [
+      "crates/canton-admin/src/topology.rs (7)",
+      "crates/canton-admin/src/lib.rs (1)"
+     ],
+     "hits": 8,
+     "review": "Read-only TopologyClient (party-to-participant, namespace delegations, vetted packages); no write service. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "topology__topology_via_ledger_api": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "External party onboarding: generate_external_party_topology() + allocate_external_party() (canton-admin client.rs). Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "user__self_inspect": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-admin/src/client.rs (15)",
+      "crates/canton-pqs/src/client.rs (1)"
+     ],
+     "hits": 16
+    },
+    "user__self_admin": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Confirmed: The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "traffic__traffic_computation": {
+     "status": "partial",
+     "evidence": [
+      "crates/canton-ledger/src/interactive.rs (27)"
+     ],
+     "hits": 27,
+     "review": "Partial: prepared transactions expose cost_estimation() (on by default, opt-out); no limits or unit conversion. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "traffic__traffic_account_listing_and_inspecting": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Checked by hand: no traffic-state client. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "traffic__traffic_account_selection": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "traffic__traffic_top_up": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "Checked by hand: no traffic purchase helper. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "multi_synchronizer__listing": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/client.rs (6)"
+     ],
+     "hits": 6
+    },
+    "multi_synchronizer__parties": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "multi_synchronizer__packages": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "multi_synchronizer__commands": {
+     "status": "partial",
+     "evidence": [
+      "crates/canton-ledger/src/json.rs (19)",
+      "crates/canton-ledger/src/update.rs (19)",
+      "crates/canton-ledger/src/command.rs (10)"
+     ],
+     "hits": 68,
+     "review": "Partial: with_synchronizer_id() on command builders; no target selection or retry tracking. The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "multi_synchronizer__streams": {
+     "status": "partial",
+     "evidence": [
+      "crates/canton-ledger/src/client.rs (37)",
+      "crates/canton-ledger/src/update.rs (22)",
+      "crates/canton-ledger/src/request.rs (16)"
+     ],
+     "hits": 84,
+     "review": "Partial: Update::Reassignment decoded (update.rs). The SDK's own mapping (conformance/ledger-client-standard-mapping.md) lists this row as roadmap (post-v1)."
+    },
+    "token_standard__one_step_transfers": {
+     "status": "claimed",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__pre_approvals": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-token/examples/v2_allocate.rs (1)"
+     ],
+     "hits": 1
+    },
+    "token_standard__allocate": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-ledger/src/json.rs (26)",
+      "crates/canton-admin/src/client.rs (24)",
+      "crates/canton-token/src/v2.rs (21)"
+     ],
+     "hits": 119
+    },
+    "token_standard__transfer": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-token/src/transfer.rs (22)",
+      "crates/canton-token/src/v2.rs (22)",
+      "crates/canton-token/src/registry.rs (17)"
+     ],
+     "hits": 66
+    },
+    "token_standard__instrument_inspection": {
+     "status": "claimed",
+     "evidence": [
+      "crates/canton-token/examples/v1_transfer.rs (12)",
+      "crates/canton-token/examples/v2_transfer.rs (12)",
+      "crates/canton-token/src/holdings.rs (11)"
+     ],
+     "hits": 64
+    },
+    "token_standard__v1": {
+     "status": "found",
+     "evidence": [
+      "crates/canton-codegen/examples/shared/splice_crates.rs (35)",
+      "crates/canton-token/src/lib.rs (6)",
+      "crates/canton-token/src/allocation.rs (4)"
+     ],
+     "hits": 67,
+     "review": "canton-token: v1 transfer/allocation/holdings modules + generated splice-api-token-*-v1 crates. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "token_standard__v2": {
+     "status": "found",
+     "evidence": [
+      "crates/canton-codegen/examples/shared/splice_crates.rs (18)",
+      "crates/canton-token/src/lib.rs (8)",
+      "crates/canton-token/src/v2.rs (6)"
+     ],
+     "hits": 42,
+     "review": "canton-token::v2 module + generated splice-api-token-*-v2 crates. Row is not in the older 70-row sheet the SDK maps against, so it has no claim either way."
+    },
+    "documentation__user_manual": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "mdBook book/ with guides (codegen, interactive submission, PQS, token standard, ...), crate examples/, rustdoc"
+    },
+    "documentation__tutorials": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "mdBook book/ with guides (codegen, interactive submission, PQS, token standard, ...), crate examples/, rustdoc"
+    },
+    "documentation__examples": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "mdBook book/ with guides (codegen, interactive submission, PQS, token standard, ...), crate examples/, rustdoc"
+    },
+    "documentation__reference": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "mdBook book/ with guides (codegen, interactive submission, PQS, token standard, ...), crate examples/, rustdoc"
+    }
+   }
+  },
+  {
+   "key": "rust_zenith",
+   "name": "Rust (Zenith canton-rs)",
+   "repo": "zenith-network/canton-rs",
+   "head": "8ed468b 2026-11-18",
+   "files_scanned": 209,
+   "note": "",
+   "cells": {
+    "codegen_and_bindings__daml_representation": {
+     "status": "found",
+     "evidence": [
+      "daml-lf/src/package.rs (14)",
+      "daml-lf/src/dalf.rs (13)",
+      "daml-lf/archive-proto/src/lib.rs (10)"
+     ],
+     "hits": 108
+    },
+    "codegen_and_bindings__json_codec": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "codegen_and_bindings__grpc_codec": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/value/src/v2/traits/impls.rs (102)",
+      "ledger-api/value/src/v2/test_fixtures.rs (14)",
+      "ledger-api/value/derive/src/value/enum_.rs (10)"
+     ],
+     "hits": 199
+    },
+    "codegen_and_bindings__json_bindings": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "codegen_and_bindings__grpc_bindings": {
+     "status": "found",
+     "evidence": [
+      "canton/base/src/auth/interceptor.rs (8)",
+      "canton/base/src/error/decoded_canton_error.rs (8)",
+      "canton/base/src/error/redacted_canton_error.rs (5)"
+     ],
+     "hits": 61
+    },
+    "codegen_and_bindings__pqs_bindings": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__tls": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/error.rs (3)",
+      "ledger-api/src/grpc/v2/client.rs (3)",
+      "ledger-api/src/grpc/v2/error.rs (3)"
+     ],
+     "hits": 11
+    },
+    "basic_infrastructure__authorization": {
+     "status": "found",
+     "evidence": [
+      "canton/base/src/auth/interceptor.rs (6)",
+      "canton/base/src/auth/token_provider.rs (4)",
+      "admin-api/src/v30/client.rs (2)"
+     ],
+     "hits": 13
+    },
+    "basic_infrastructure__error_parsing_and_handling": {
+     "status": "found",
+     "evidence": [
+      "canton/base/src/error/decoded_canton_error.rs (27)",
+      "ledger-api/src/grpc/v2/error.rs (22)",
+      "canton/base/src/error/test_fixtures.rs (20)"
+     ],
+     "hits": 101
+    },
+    "basic_infrastructure__tracing": {
+     "status": "found",
+     "evidence": [
+      "canton/base/src/error/decoded_canton_error.rs (16)",
+      "canton/base/src/error/test_fixtures.rs (10)",
+      "canton/base/src/error/redacted_canton_error.rs (6)"
+     ],
+     "hits": 32
+    },
+    "basic_infrastructure__retry_logic": {
+     "status": "found",
+     "evidence": [
+      "canton/base/src/retry/retry_handler.rs (102)",
+      "canton/base/src/retry/policies.rs (81)",
+      "canton/base/src/error/decoded_canton_error.rs (56)"
+     ],
+     "hits": 685
+    },
+    "basic_infrastructure__logging": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/client.rs (4)",
+      "ledger-api/src/grpc/v2/tracing_layer.rs (4)",
+      "daml-lf/codegen/src/main.rs (2)"
+     ],
+     "hits": 14
+    },
+    "basic_infrastructure__metrics": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__signing": {
+     "status": "found",
+     "evidence": [
+      "canton/crypto/src/v30/signature.rs (17)",
+      "canton/crypto/src/v30/mod.rs (9)",
+      "canton/crypto/src/v30/keys/public_signing_key.rs (4)"
+     ],
+     "hits": 30
+    },
+    "basic_infrastructure__node_health": {
+     "status": "found",
+     "evidence": [
+      "admin-api/types/src/topology/v30/connected_synchronizer.rs (21)",
+      "admin-api/types/src/topology/v30/health.rs (2)",
+      "ledger-api/src/grpc/v2/services/state_service.rs (2)"
+     ],
+     "hits": 27
+    },
+    "commands__json": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "commands__grpc": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/command_service.rs (6)",
+      "ledger-api/src/grpc/v2/services/command_submission_service.rs (6)",
+      "ledger-api/src/grpc/v2/services/mod.rs (6)"
+     ],
+     "hits": 23
+    },
+    "commands__internal_commands": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/command_service.rs (12)",
+      "examples/example-daml-project/simple-workflow/src/main.rs (3)",
+      "examples/example-ledger-api-project/src/lib.rs (3)"
+     ],
+     "hits": 18
+    },
+    "commands__external_commands": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "commands__deduplication": {
+     "status": "found",
+     "evidence": [
+      "canton/base/src/error/category_id.rs (2)",
+      "ledger-api/types/src/v2/commands.rs (2)",
+      "canton/base/src/error/decoded_canton_error.rs (1)"
+     ],
+     "hits": 6
+    },
+    "commands__command_recovery": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/command_completion_service.rs (18)",
+      "ledger-api/src/grpc/v2/error.rs (4)",
+      "ledger-api/types/src/v2/completion.rs (2)"
+     ],
+     "hits": 27
+    },
+    "commands__batching": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "commands__contract_keys": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/types/src/v2/commands.rs (21)",
+      "ledger-api/types/src/v2/template.rs (5)",
+      "ledger-api/types/src/v2/mod.rs (2)"
+     ],
+     "hits": 28
+    },
+    "commands__explicit_disclosure": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/types/src/v2/commands.rs (2)"
+     ],
+     "hits": 2
+    },
+    "commands__pending_set": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "commands__package_selection": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/types/src/v2/commands.rs (1)"
+     ],
+     "hits": 1
+    },
+    "commands__ha": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__json": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__grpc": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/update_service.rs (15)",
+      "ledger-api/src/grpc/v2/services/state_service.rs (14)",
+      "ledger-api/src/grpc/v2/client.rs (8)"
+     ],
+     "hits": 41
+    },
+    "streams__acs_streaming": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/state_service.rs (9)"
+     ],
+     "hits": 9
+    },
+    "streams__acs_paging": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/party_management_service.rs (8)",
+      "ledger-api/src/grpc/v2/services/update_service.rs (6)",
+      "ledger-api/types/src/v2/pagination.rs (1)"
+     ],
+     "hits": 15
+    },
+    "streams__updates_streaming": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/update_service.rs (10)"
+     ],
+     "hits": 10
+    },
+    "streams__updates_paging": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/update_service.rs (9)",
+      "ledger-api/src/grpc/v2/services/mod.rs (1)"
+     ],
+     "hits": 10
+    },
+    "streams__reverse_order": {
+     "status": "found",
+     "evidence": [
+      "canton/base/src/error/decoded_canton_error.rs (7)",
+      "canton/base/src/error/test_fixtures.rs (5)",
+      "ledger-api/src/grpc/v2/services/update_service.rs (2)"
+     ],
+     "hits": 14
+    },
+    "streams__interfaces": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/types/src/v2/filters.rs (19)",
+      "ledger-api/types/src/v2/events.rs (1)",
+      "ledger-api/types/src/v2/mod.rs (1)"
+     ],
+     "hits": 21
+    },
+    "streams__topology_events": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/types/src/v2/topology_format.rs (7)",
+      "ledger-api/types/src/v2/update.rs (7)",
+      "ledger-api/types/src/v2/update_format.rs (6)"
+     ],
+     "hits": 28
+    },
+    "streams__in_memory_acs": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__resilient_streams": {
+     "status": "found",
+     "evidence": [
+      "admin-api/types/src/topology/v30/force_flag.rs (6)",
+      "ledger-api/src/grpc/v2/services/state_service.rs (6)",
+      "ledger-api/types/src/v2/reassignment.rs (5)"
+     ],
+     "hits": 27
+    },
+    "streams__ha": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__json": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__grpc": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/client.rs (6)",
+      "ledger-api/src/grpc/v2/services/party_management_service.rs (6)",
+      "ledger-api/types/src/v2/version.rs (4)"
+     ],
+     "hits": 19
+    },
+    "parties__list_parties": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/party_management_service.rs (5)"
+     ],
+     "hits": 5
+    },
+    "parties__local_parties_creation": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/party_management_service.rs (12)",
+      "ledger-api/src/grpc/v2/services/mod.rs (1)"
+     ],
+     "hits": 13
+    },
+    "parties__external_parties_creation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__local_parties_modification": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__external_parties_modification": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__decentralized_party_creation": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/services/topology_read.rs (10)",
+      "canton/crypto/src/v30/hash_purpose.rs (2)"
+     ],
+     "hits": 12
+    },
+    "packages__json": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "packages__grpc": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/package_service.rs (5)",
+      "ledger-api/src/grpc/v2/client.rs (4)",
+      "ledger-api/src/grpc/v2/services/mod.rs (1)"
+     ],
+     "hits": 10
+    },
+    "packages__upload": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "packages__validation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "packages__vetting": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/services/topology_read.rs (10)",
+      "ledger-api/types/src/v2/version.rs (3)"
+     ],
+     "hits": 13
+    },
+    "packages__listing": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/package_service.rs (6)"
+     ],
+     "hits": 6
+    },
+    "packages__package_preference": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "packages__description": {
+     "status": "found",
+     "evidence": [
+      "daml-lf/codegen/src/type_attributes.rs (2)",
+      "ledger-api/src/grpc/v2/services/package_service.rs (2)"
+     ],
+     "hits": 4
+    },
+    "topology__list_mappings": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/services/topology_read.rs (10)"
+     ],
+     "hits": 10
+    },
+    "topology__mapping_presentation": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_construction": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/services/topology_write.rs (4)"
+     ],
+     "hits": 4
+    },
+    "topology__mapping_signing": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_submission": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__namespace_delegations": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/services/topology_read.rs (10)",
+      "admin-api/src/v30/services/topology_write.rs (2)"
+     ],
+     "hits": 12
+    },
+    "topology__decentralized_namespaces": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/services/topology_read.rs (10)",
+      "canton/crypto/src/v30/hash_purpose.rs (2)"
+     ],
+     "hits": 12
+    },
+    "topology__owner_to_key_mapping": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/services/topology_read.rs (10)"
+     ],
+     "hits": 10
+    },
+    "topology__party_to_participant": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/services/topology_read.rs (11)"
+     ],
+     "hits": 11
+    },
+    "topology__party_to_key_mapping": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__vetted_packages": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/services/topology_read.rs (10)",
+      "ledger-api/types/src/v2/version.rs (3)"
+     ],
+     "hits": 13
+    },
+    "topology__topology_via_admin_api": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/services/topology_read.rs (7)",
+      "admin-api/src/v30/services/topology_write.rs (7)",
+      "admin-api/src/v30/services/mod.rs (2)"
+     ],
+     "hits": 16
+    },
+    "topology__topology_via_ledger_api": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "user__self_inspect": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "user__self_admin": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "traffic__traffic_computation": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/types/src/v2/completion.rs (3)",
+      "ledger-api/types/src/v2/reassignment.rs (3)",
+      "ledger-api/types/src/v2/transaction.rs (3)"
+     ],
+     "hits": 9
+    },
+    "traffic__traffic_account_listing_and_inspecting": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "traffic__traffic_account_selection": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "traffic__traffic_top_up": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__listing": {
+     "status": "found",
+     "evidence": [
+      "admin-api/src/v30/services/participant_status.rs (5)"
+     ],
+     "hits": 5
+    },
+    "multi_synchronizer__parties": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__packages": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__commands": {
+     "status": "found",
+     "evidence": [
+      "canton/types/src/topology/physical_synchronizer_id.rs (54)",
+      "canton/types/src/topology/synchronizer_id.rs (31)",
+      "canton/types/src/synchronizer_id.rs (29)"
+     ],
+     "hits": 188
+    },
+    "multi_synchronizer__streams": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/types/src/v2/reassignment.rs (31)",
+      "ledger-api/types/src/v2/acs.rs (10)",
+      "ledger-api/types/src/v2/mod.rs (7)"
+     ],
+     "hits": 66
+    },
+    "token_standard__one_step_transfers": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__pre_approvals": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__allocate": {
+     "status": "found",
+     "evidence": [
+      "ledger-api/src/grpc/v2/services/party_management_service.rs (29)",
+      "canton/base/src/error/decoded_canton_error.rs (1)",
+      "canton/types/src/dotted_name.rs (1)"
+     ],
+     "hits": 32
+    },
+    "token_standard__transfer": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__instrument_inspection": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__v1": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__v2": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "documentation__user_manual": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "examples/ only; 43-line README"
+    },
+    "documentation__tutorials": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "examples/ only; 43-line README"
+    },
+    "documentation__examples": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "examples/ only; 43-line README"
+    },
+    "documentation__reference": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "examples/ only; 43-line README"
+    }
+   }
+  },
+  {
+   "key": "csharp",
+   "name": "C# (Peaceful Studio)",
+   "repo": "peacefulstudio/canton-dotnet-sdk",
+   "head": "ca748b9 2026-11-15",
+   "files_scanned": 497,
+   "note": "",
+   "cells": {
+    "codegen_and_bindings__daml_representation": {
+     "status": "found",
+     "evidence": [
+      "src/Daml.Runtime/Serialization/DamlLfJsonDecoders.cs (67)",
+      "src/Daml.Codegen.CSharp/CodeGen/DamlTypeMapper.cs (59)",
+      "src/Daml.Codegen.DarParser/PackageContext.cs (55)"
+     ],
+     "hits": 1026
+    },
+    "codegen_and_bindings__json_codec": {
+     "status": "found",
+     "evidence": [
+      "src/Daml.Codegen.CSharp/CodeGen/DamlTypeMapper.cs (56)",
+      "src/Daml.Runtime/Serialization/DamlValueClrJsonConverter.cs (50)",
+      "src/Daml.Runtime/Serialization/DamlJsonSerializer.cs (48)"
+     ],
+     "hits": 576
+    },
+    "codegen_and_bindings__grpc_codec": {
+     "status": "found",
+     "evidence": [
+      "src/Daml.Codegen.CSharp/CodeGen/DamlTypeMapper.cs (40)",
+      "src/Canton.Ledger.Grpc.Client/DamlValueConverter.cs (33)",
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (22)"
+     ],
+     "hits": 159
+    },
+    "codegen_and_bindings__json_bindings": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.cs (13)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.Canton.cs (11)",
+      "src/Canton.Ledger.Rest.Client/ServiceCollectionExtensions.cs (11)"
+     ],
+     "hits": 132
+    },
+    "codegen_and_bindings__grpc_bindings": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/LedgerGrpcChannel.cs (5)",
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.cs (4)",
+      "src/Canton.Ledger.Grpc.Client/LedgerClientOptions.cs (4)"
+     ],
+     "hits": 25
+    },
+    "codegen_and_bindings__pqs_bindings": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Abstractions/IPqsClient.cs (13)",
+      "src/Canton.Ledger.Testing/FakePqsClient.cs (9)",
+      "src/Canton.Ledger.Pqs.Client/PqsClient.cs (8)"
+     ],
+     "hits": 96
+    },
+    "basic_infrastructure__tls": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Kernel/Security/TlsOptions.cs (57)",
+      "src/Canton.Ledger.Grpc.Client/LedgerClientOptions.cs (18)",
+      "src/Canton.Ledger.Kernel/Security/SslClientAuthenticationOptionsFactory.cs (14)"
+     ],
+     "hits": 130
+    },
+    "basic_infrastructure__authorization": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Kernel/Authentication/ServiceCollectionExtensions.cs (35)",
+      "src/Canton.Ledger.Kernel/Authentication/TokenProviderExtensions.cs (31)",
+      "src/Canton.Ledger.Kernel/Authentication/TokenGeneration/ClientCredentialsProvider.cs (26)"
+     ],
+     "hits": 288
+    },
+    "basic_infrastructure__error_parsing_and_handling": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Abstractions/DamlErrorCategoryExtensions.cs (24)",
+      "src/Canton.Ledger.Abstractions/ParsedLedgerError.cs (21)",
+      "src/Canton.Ledger.Grpc.Client/GrpcStatusMappingExtensions.cs (21)"
+     ],
+     "hits": 242
+    },
+    "basic_infrastructure__tracing": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Abstractions/Completion.cs (16)",
+      "src/Canton.Ledger.OpenTelemetry/CantonLedgerTracerProviderBuilderExtensions.cs (7)",
+      "src/Canton.Ledger.Grpc.Client/GrpcCompletionProjector.cs (4)"
+     ],
+     "hits": 40
+    },
+    "basic_infrastructure__retry_logic": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Kernel/Resilience/RetryPipelineFactory.cs (35)",
+      "src/Canton.Ledger.Grpc.Client/LedgerCallInvoker.cs (26)",
+      "src/Canton.Ledger.Rest.Client/RestRetryHandler.cs (23)"
+     ],
+     "hits": 238
+    },
+    "basic_infrastructure__logging": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/SubmissionClient.cs (93)",
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (76)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (70)"
+     ],
+     "hits": 1005
+    },
+    "basic_infrastructure__metrics": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__signing": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Kernel/Wire/ExternalPartyIdentity.cs (11)",
+      "src/Canton.Ledger.Abstractions/ExternalSigning.cs (8)",
+      "src/Canton.Ledger.Grpc.Client/GrpcEnumMaps.cs (8)"
+     ],
+     "hits": 34
+    },
+    "basic_infrastructure__node_health": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestLedgerHealthCheck.cs (22)",
+      "src/Canton.Ledger.Grpc.Client/LedgerHealthCheck.cs (18)",
+      "src/Canton.Ledger.Pqs.Client/PqsHealthCheck.cs (17)"
+     ],
+     "hits": 131
+    },
+    "commands__json": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.Canton.cs (8)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.cs (2)",
+      "src/Canton.Ledger.Abstractions/ICantonLedgerClient.cs (1)"
+     ],
+     "hits": 15
+    },
+    "commands__grpc": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/SubmissionClient.cs (28)",
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.cs (26)",
+      "src/Canton.Ledger.Abstractions/ICantonLedgerClient.cs (2)"
+     ],
+     "hits": 58
+    },
+    "commands__internal_commands": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.cs (29)",
+      "src/Canton.Ledger.Testing/FakeLedgerClient.cs (26)",
+      "src/Canton.Ledger.Grpc.Client/SubmissionClient.cs (25)"
+     ],
+     "hits": 174
+    },
+    "commands__external_commands": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.InteractiveSubmission.cs (42)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.InteractiveSubmission.cs (39)",
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.cs (13)"
+     ],
+     "hits": 148
+    },
+    "commands__deduplication": {
+     "status": "found",
+     "evidence": [
+      "src/Daml.Runtime/Commands/CommandsSubmission.cs (31)",
+      "src/Daml.Runtime/Commands/DeduplicationPeriod.cs (26)",
+      "src/Canton.Ledger.Rest/DeduplicationPeriodJsonConverter.cs (24)"
+     ],
+     "hits": 212
+    },
+    "commands__command_recovery": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.Streams.cs (39)",
+      "src/Canton.Ledger.Abstractions/ICantonLedgerClient.cs (25)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.Canton.cs (24)"
+     ],
+     "hits": 203
+    },
+    "commands__batching": {
+     "status": "found",
+     "evidence": [
+      "src/Daml.Ledger.Abstractions/CommandBatch.cs (6)",
+      "src/Daml.Ledger.Abstractions/Extensions/CommandBatchExtensions.cs (6)",
+      "src/Daml.Ledger.Abstractions/BatchHandle.cs (3)"
+     ],
+     "hits": 19
+    },
+    "commands__contract_keys": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestCommandBuilder.cs (11)",
+      "src/Canton.Ledger.Grpc.Client/GrpcCommandBuilder.cs (8)",
+      "src/Daml.Codegen.CSharp/CodeGen/ChoiceEmitter.cs (6)"
+     ],
+     "hits": 34
+    },
+    "commands__explicit_disclosure": {
+     "status": "found",
+     "evidence": [
+      "src/Daml.Runtime/Commands/CommandsSubmission.cs (24)",
+      "src/Canton.Ledger.Rest.Client/RestCommandBuilder.cs (11)",
+      "src/Splice.Api.Token.Registry.Client/DisclosedContractMapping.cs (10)"
+     ],
+     "hits": 100
+    },
+    "commands__pending_set": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "commands__package_selection": {
+     "status": "found",
+     "evidence": [
+      "src/Daml.Runtime/Commands/CommandsSubmission.cs (11)",
+      "src/Canton.Ledger.Grpc.Client/GrpcCommandBuilder.cs (4)",
+      "src/Canton.Ledger.Rest.Client/RestCommandBuilder.cs (4)"
+     ],
+     "hits": 24
+    },
+    "commands__ha": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__json": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.cs (7)",
+      "src/Canton.Ledger.Rest.Client/RestStreamBodyReader.cs (3)",
+      "src/Canton.Ledger.Rest.Client/RestSubscribeRequestBuilder.cs (3)"
+     ],
+     "hits": 21
+    },
+    "streams__grpc": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.cs (36)",
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.Reads.cs (20)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.cs (18)"
+     ],
+     "hits": 189
+    },
+    "streams__acs_streaming": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.cs (20)",
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.Reads.cs (7)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.TypedReads.cs (7)"
+     ],
+     "hits": 80
+    },
+    "streams__acs_paging": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.cs (39)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (31)",
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (26)"
+     ],
+     "hits": 216
+    },
+    "streams__updates_streaming": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.cs (8)",
+      "src/Canton.Ledger.Rest.Client/RestSubscribeRequestBuilder.cs (7)",
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.Reads.cs (6)"
+     ],
+     "hits": 66
+    },
+    "streams__updates_paging": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.Reads.cs (7)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.TypedReads.cs (7)",
+      "src/Canton.Ledger.Testing/FakeLedgerClientBuilder.TypedReads.cs (6)"
+     ],
+     "hits": 32
+    },
+    "streams__reverse_order": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.Reads.cs (3)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.TypedReads.cs (3)",
+      "src/Canton.Ledger.Abstractions/ICantonLedgerClient.cs (2)"
+     ],
+     "hits": 9
+    },
+    "streams__interfaces": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestSubscribeRequestBuilder.cs (21)",
+      "src/Canton.Ledger.Grpc.Client/GrpcSubscribeRequestBuilder.cs (20)",
+      "src/Daml.Runtime/Commands/CommandsSubmission.cs (12)"
+     ],
+     "hits": 124
+    },
+    "streams__topology_events": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Kernel/Wire/ExternalPartyTopologyVerifier.cs (8)",
+      "src/Canton.Ledger.Abstractions/ExternalParty.cs (6)",
+      "src/Canton.Ledger.Kernel/Wire/TopologyMultiHash.cs (4)"
+     ],
+     "hits": 29
+    },
+    "streams__in_memory_acs": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__resilient_streams": {
+     "status": "found",
+     "evidence": [
+      "src/Daml.Ledger.Abstractions/ILedgerStreamer.cs (29)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.cs (16)",
+      "src/Canton.Ledger.Abstractions/RecoveryExtensions.cs (13)"
+     ],
+     "hits": 192
+    },
+    "streams__ha": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__json": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.ExternalParty.cs (4)",
+      "src/Canton.Ledger.Rest/IPartyManagementApi.cs (4)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (3)"
+     ],
+     "hits": 14
+    },
+    "parties__grpc": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (14)",
+      "src/Canton.Ledger.Rest/PartyManagementServiceApiExtensions.cs (3)",
+      "src/Canton.Ledger.Grpc.Client/AdminClient.ExternalParty.cs (2)"
+     ],
+     "hits": 22
+    },
+    "parties__list_parties": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (5)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (4)",
+      "src/Canton.Ledger.Rest/IPartyManagementApi.cs (2)"
+     ],
+     "hits": 15
+    },
+    "parties__local_parties_creation": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (7)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (6)",
+      "src/Canton.Ledger.Testing/FakeAdminClient.cs (4)"
+     ],
+     "hits": 19
+    },
+    "parties__external_parties_creation": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.ExternalParty.cs (27)",
+      "src/Canton.Ledger.Testing/FakeAdminClient.cs (23)",
+      "src/Canton.Ledger.Grpc.Client/AdminClient.ExternalParty.cs (20)"
+     ],
+     "hits": 123
+    },
+    "parties__local_parties_modification": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (10)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (9)",
+      "src/Canton.Ledger.Testing/FakeAdminClient.cs (3)"
+     ],
+     "hits": 26
+    },
+    "parties__external_parties_modification": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Kernel/Wire/ExternalPartyTopologyVerifier.cs (3)"
+     ],
+     "hits": 3
+    },
+    "parties__decentralized_party_creation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "packages__json": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (4)",
+      "src/Canton.Ledger.Rest/IDarApi.cs (2)",
+      "src/Canton.Ledger.Rest/IPackageApi.cs (1)"
+     ],
+     "hits": 7
+    },
+    "packages__grpc": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (42)",
+      "src/Canton.Ledger.Abstractions/IAdminClient.cs (2)",
+      "src/Canton.Ledger.Rest.Client/ServiceCollectionExtensions.cs (2)"
+     ],
+     "hits": 50
+    },
+    "packages__upload": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (9)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (9)",
+      "src/Canton.Ledger.Rest/IDarApi.cs (4)"
+     ],
+     "hits": 28
+    },
+    "packages__validation": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (9)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (9)",
+      "src/Canton.Ledger.Abstractions/IAdminClient.cs (3)"
+     ],
+     "hits": 26
+    },
+    "packages__vetting": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (44)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (41)",
+      "src/Canton.Ledger.Testing/FakeAdminClient.cs (20)"
+     ],
+     "hits": 140
+    },
+    "packages__listing": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (5)",
+      "src/Canton.Ledger.Abstractions/IAdminClient.cs (3)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.PackagesAndTime.cs (3)"
+     ],
+     "hits": 13
+    },
+    "packages__package_preference": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.InteractiveSubmission.cs (8)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.InteractiveSubmission.cs (8)",
+      "src/Canton.Ledger.Testing/FakeLedgerClient.InteractiveSubmission.cs (7)"
+     ],
+     "hits": 33
+    },
+    "packages__description": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest/IPackageApi.cs (2)",
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (1)"
+     ],
+     "hits": 3
+    },
+    "topology__list_mappings": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.ExternalParty.cs (1)"
+     ],
+     "hits": 1
+    },
+    "topology__mapping_presentation": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_construction": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_signing": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_submission": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__namespace_delegations": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__decentralized_namespaces": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__owner_to_key_mapping": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__party_to_participant": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Kernel/Wire/ExternalPartyTopologyVerifier.cs (27)",
+      "src/Canton.Ledger.Abstractions/IAdminClient.cs (3)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.ExternalParty.cs (1)"
+     ],
+     "hits": 31
+    },
+    "topology__party_to_key_mapping": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__vetted_packages": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (44)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (41)",
+      "src/Canton.Ledger.Testing/FakeAdminClient.cs (20)"
+     ],
+     "hits": 140
+    },
+    "topology__topology_via_admin_api": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__topology_via_ledger_api": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "user__self_inspect": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (14)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (11)",
+      "src/Canton.Ledger.Rest/IUserManagementApi.cs (5)"
+     ],
+     "hits": 40
+    },
+    "user__self_admin": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (17)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (16)",
+      "src/Canton.Ledger.Testing/FakeAdminClient.cs (5)"
+     ],
+     "hits": 43
+    },
+    "traffic__traffic_computation": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.TrafficCost.cs (19)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.TrafficCost.cs (18)",
+      "src/Canton.Ledger.Rest/WireInt64Sites.cs (12)"
+     ],
+     "hits": 134
+    },
+    "traffic__traffic_account_listing_and_inspecting": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Abstractions/TrafficCostEstimate.cs (1)"
+     ],
+     "hits": 1
+    },
+    "traffic__traffic_account_selection": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "traffic__traffic_top_up": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__listing": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.Canton.cs (16)",
+      "src/Canton.Ledger.Grpc.Client/LedgerClient.State.cs (6)",
+      "src/Canton.Ledger.Testing/FakeLedgerClient.Canton.cs (5)"
+     ],
+     "hits": 35
+    },
+    "multi_synchronizer__parties": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__packages": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__commands": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (31)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (31)",
+      "src/Canton.Ledger.Grpc.Client/GrpcProjectionCore.cs (29)"
+     ],
+     "hits": 427
+    },
+    "multi_synchronizer__streams": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Rest.Client/RestProjectionCore.cs (101)",
+      "src/Canton.Ledger.Grpc.Client/GrpcProjectionCore.cs (87)",
+      "src/Canton.Ledger.Rest.Client/RestLedgerClient.Canton.cs (59)"
+     ],
+     "hits": 720
+    },
+    "token_standard__one_step_transfers": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__pre_approvals": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "token_standard__allocate": {
+     "status": "found",
+     "evidence": [
+      "src/Canton.Ledger.Testing/FakeAdminClient.cs (22)",
+      "src/Canton.Ledger.Grpc.Client/AdminClient.cs (13)",
+      "src/Canton.Ledger.Rest.Client/RestAdminClient.cs (13)"
+     ],
+     "hits": 108
+    },
+    "token_standard__transfer": {
+     "status": "found",
+     "evidence": [
+      "src/Splice.Api.Token.Registry.Client/ServiceCollectionExtensions.cs (4)"
+     ],
+     "hits": 4
+    },
+    "token_standard__instrument_inspection": {
+     "status": "found",
+     "evidence": [
+      "src/Splice.Api.Token.Registry.Client/ServiceCollectionExtensions.cs (2)"
+     ],
+     "hits": 2
+    },
+    "token_standard__v1": {
+     "status": "found",
+     "evidence": [
+      "src/Splice.Api.Token.Registry.Client/ServiceCollectionExtensions.cs (4)",
+      "src/Daml.Codegen.Intermediate/Model/DamlPrimitiveCatalog.cs (3)"
+     ],
+     "hits": 7
+    },
+    "token_standard__v2": {
+     "status": "found",
+     "evidence": [
+      "src/Splice.Api.Token.Registry.Client/ServiceCollectionExtensions.cs (3)"
+     ],
+     "hits": 3
+    },
+    "documentation__user_manual": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "docs/public + samples/ + docfx.json API reference"
+    },
+    "documentation__tutorials": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "docs/public + samples/ + docfx.json API reference"
+    },
+    "documentation__examples": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "docs/public + samples/ + docfx.json API reference"
+    },
+    "documentation__reference": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "docs/public + samples/ + docfx.json API reference"
+    }
+   }
+  },
+  {
+   "key": "go",
+   "name": "Go (Noders go-daml)",
+   "repo": "noders-team/go-daml",
+   "head": "5db7012 2026-11-05",
+   "files_scanned": 66,
+   "note": "",
+   "cells": {
+    "codegen_and_bindings__daml_representation": {
+     "status": "found",
+     "evidence": [
+      "internal/codegen/astgen/v3/common.go (43)",
+      "internal/codegen/astgen/v2/common.go (39)",
+      "internal/codegen/astgen/factory.go (5)"
+     ],
+     "hits": 96
+    },
+    "codegen_and_bindings__json_codec": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/gen_clients/splice_amulet_0_1_16.go (1639)",
+      "pkg/wallet/gen_clients/splice_util_token_standard_wallet_1_0_1.go (160)",
+      "pkg/wallet/gen_clients/splice_api_token_transfer_instruction_v1_1_0_0.go (117)"
+     ],
+     "hits": 2333
+    },
+    "codegen_and_bindings__grpc_codec": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/converters.go (77)",
+      "pkg/service/topology/topology_manager_read.go (51)",
+      "pkg/service/topology/topology_manager_write.go (48)"
+     ],
+     "hits": 312
+    },
+    "codegen_and_bindings__json_bindings": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "codegen_and_bindings__grpc_bindings": {
+     "status": "found",
+     "evidence": [
+      "pkg/client/client.go (4)",
+      "pkg/client/config.go (2)"
+     ],
+     "hits": 6
+    },
+    "codegen_and_bindings__pqs_bindings": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__tls": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/sequencer_bft.go (13)",
+      "pkg/client/client.go (11)",
+      "pkg/client/config.go (7)"
+     ],
+     "hits": 38
+    },
+    "basic_infrastructure__authorization": {
+     "status": "found",
+     "evidence": [
+      "pkg/auth/keycloak.go (30)",
+      "pkg/auth/bearer.go (13)",
+      "pkg/client/config.go (8)"
+     ],
+     "hits": 69
+    },
+    "basic_infrastructure__error_parsing_and_handling": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__tracing": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__retry_logic": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/tokenstandard.go (6)"
+     ],
+     "hits": 6
+    },
+    "basic_infrastructure__logging": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/tokenstandard.go (12)",
+      "pkg/client/scanproxy.go (9)"
+     ],
+     "hits": 21
+    },
+    "basic_infrastructure__metrics": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "basic_infrastructure__signing": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/topology/topology_manager_write.go (17)",
+      "pkg/crypto/signing.go (9)",
+      "pkg/crypto/keys.go (6)"
+     ],
+     "hits": 41
+    },
+    "basic_infrastructure__node_health": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/state_service.go (9)",
+      "pkg/client/query.go (2)",
+      "pkg/model/ledger.go (2)"
+     ],
+     "hits": 13
+    },
+    "commands__json": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "commands__grpc": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/command_service.go (8)",
+      "pkg/client/binding.go (4)",
+      "pkg/service/ledger/command_submission.go (2)"
+     ],
+     "hits": 14
+    },
+    "commands__internal_commands": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/command_service.go (9)",
+      "pkg/model/ledger.go (2)"
+     ],
+     "hits": 11
+    },
+    "commands__external_commands": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/interactive_submission.go (28)",
+      "pkg/service/ledger/converters.go (14)",
+      "pkg/model/ledger.go (5)"
+     ],
+     "hits": 51
+    },
+    "commands__deduplication": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/converters.go (18)",
+      "pkg/model/ledger.go (12)"
+     ],
+     "hits": 30
+    },
+    "commands__command_recovery": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/command_completion.go (31)",
+      "pkg/client/binding.go (4)",
+      "pkg/model/ledger.go (3)"
+     ],
+     "hits": 38
+    },
+    "commands__batching": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "commands__contract_keys": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/converters.go (13)",
+      "pkg/model/ledger.go (5)"
+     ],
+     "hits": 18
+    },
+    "commands__explicit_disclosure": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/tokenstandard.go (37)",
+      "pkg/service/ledger/converters.go (17)",
+      "pkg/client/scanproxy.go (12)"
+     ],
+     "hits": 77
+    },
+    "commands__pending_set": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "commands__package_selection": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/converters.go (4)",
+      "pkg/model/ledger.go (2)"
+     ],
+     "hits": 6
+    },
+    "commands__ha": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__json": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__grpc": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/update_service.go (30)",
+      "pkg/service/ledger/state_service.go (27)",
+      "pkg/client/binding.go (8)"
+     ],
+     "hits": 80
+    },
+    "streams__acs_streaming": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/state_service.go (16)",
+      "pkg/client/query.go (5)",
+      "pkg/wallet/tokenstandard.go (3)"
+     ],
+     "hits": 26
+    },
+    "streams__acs_paging": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/party_management.go (6)",
+      "pkg/service/ledger/package_service.go (4)",
+      "pkg/model/ledger.go (2)"
+     ],
+     "hits": 13
+    },
+    "streams__updates_streaming": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/update_service.go (17)",
+      "pkg/model/ledger.go (2)"
+     ],
+     "hits": 19
+    },
+    "streams__updates_paging": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__reverse_order": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__interfaces": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/converters.go (21)",
+      "pkg/model/ledger.go (7)",
+      "pkg/client/query.go (4)"
+     ],
+     "hits": 34
+    },
+    "streams__topology_events": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/topology/topology_manager_write.go (26)",
+      "pkg/model/topology.go (16)",
+      "pkg/service/topology/topology_manager_read.go (7)"
+     ],
+     "hits": 49
+    },
+    "streams__in_memory_acs": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "streams__resilient_streams": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/update_service.go (2)",
+      "pkg/service/topology/topology_manager_write.go (2)",
+      "pkg/model/topology.go (1)"
+     ],
+     "hits": 5
+    },
+    "streams__ha": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__json": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__grpc": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/party_management.go (2)"
+     ],
+     "hits": 2
+    },
+    "parties__list_parties": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/party_management.go (7)",
+      "pkg/model/admin.go (1)"
+     ],
+     "hits": 8
+    },
+    "parties__local_parties_creation": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/party_management.go (4)",
+      "pkg/testutil/testutil.go (1)"
+     ],
+     "hits": 5
+    },
+    "parties__external_parties_creation": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/gen_clients/splice_amulet_0_1_16.go (168)",
+      "pkg/service/admin/party_management.go (6)"
+     ],
+     "hits": 174
+    },
+    "parties__local_parties_modification": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/party_management.go (8)"
+     ],
+     "hits": 8
+    },
+    "parties__external_parties_modification": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "parties__decentralized_party_creation": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "packages__json": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "packages__grpc": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/package_service.go (11)",
+      "pkg/client/binding.go (4)",
+      "pkg/service/admin/package_management.go (2)"
+     ],
+     "hits": 17
+    },
+    "packages__upload": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/package_management.go (4)"
+     ],
+     "hits": 4
+    },
+    "packages__validation": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/package_management.go (4)"
+     ],
+     "hits": 4
+    },
+    "packages__vetting": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/package_management.go (61)",
+      "pkg/service/ledger/package_service.go (30)",
+      "pkg/model/admin.go (24)"
+     ],
+     "hits": 120
+    },
+    "packages__listing": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/package_service.go (9)",
+      "pkg/model/ledger.go (2)"
+     ],
+     "hits": 11
+    },
+    "packages__package_preference": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/interactive_submission.go (9)",
+      "pkg/model/ledger.go (2)"
+     ],
+     "hits": 11
+    },
+    "packages__description": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/package_service.go (3)"
+     ],
+     "hits": 3
+    },
+    "topology__list_mappings": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/topology/topology_manager_read.go (23)",
+      "pkg/model/topology.go (2)"
+     ],
+     "hits": 25
+    },
+    "topology__mapping_presentation": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__mapping_construction": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/topology/topology_manager_write.go (21)",
+      "pkg/model/topology.go (2)"
+     ],
+     "hits": 23
+    },
+    "topology__mapping_signing": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/topology/topology_manager_write.go (17)",
+      "pkg/model/topology.go (2)"
+     ],
+     "hits": 19
+    },
+    "topology__mapping_submission": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/topology/topology_manager_write.go (17)",
+      "pkg/model/topology.go (2)"
+     ],
+     "hits": 19
+    },
+    "topology__namespace_delegations": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/topology/topology_manager_read.go (28)",
+      "pkg/model/topology.go (8)",
+      "pkg/service/topology/topology_manager_write.go (4)"
+     ],
+     "hits": 40
+    },
+    "topology__decentralized_namespaces": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__owner_to_key_mapping": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "topology__party_to_participant": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/topology/topology_manager_read.go (32)",
+      "pkg/model/topology.go (9)",
+      "pkg/service/topology/topology_manager_write.go (6)"
+     ],
+     "hits": 47
+    },
+    "topology__party_to_key_mapping": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/topology/topology_manager_read.go (28)",
+      "pkg/model/topology.go (12)",
+      "pkg/service/topology/topology_manager_write.go (4)"
+     ],
+     "hits": 44
+    },
+    "topology__vetted_packages": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/package_management.go (61)",
+      "pkg/service/ledger/package_service.go (30)",
+      "pkg/model/admin.go (24)"
+     ],
+     "hits": 120
+    },
+    "topology__topology_via_admin_api": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/topology/topology_manager_write.go (13)",
+      "pkg/service/topology/topology_manager_read.go (11)",
+      "pkg/client/binding.go (8)"
+     ],
+     "hits": 32
+    },
+    "topology__topology_via_ledger_api": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "user__self_inspect": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/user_management.go (9)"
+     ],
+     "hits": 9
+    },
+    "user__self_admin": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/user_management.go (4)"
+     ],
+     "hits": 4
+    },
+    "traffic__traffic_computation": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/converters.go (19)",
+      "pkg/model/ledger.go (12)",
+      "pkg/service/ledger/update_service.go (6)"
+     ],
+     "hits": 44
+    },
+    "traffic__traffic_account_listing_and_inspecting": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/admin/traffic_control.go (11)"
+     ],
+     "hits": 11
+    },
+    "traffic__traffic_account_selection": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "traffic__traffic_top_up": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/gen_clients/splice_amulet_0_1_16.go (90)",
+      "pkg/wallet/tokenstandard.go (3)"
+     ],
+     "hits": 93
+    },
+    "multi_synchronizer__listing": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/state_service.go (17)",
+      "pkg/testutil/testutil.go (5)",
+      "pkg/model/ledger.go (3)"
+     ],
+     "hits": 25
+    },
+    "multi_synchronizer__parties": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__packages": {
+     "status": "unassessed",
+     "evidence": [],
+     "hits": 0
+    },
+    "multi_synchronizer__commands": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/gen_clients/splice_amulet_0_1_16.go (16)",
+      "pkg/client/scanproxy.go (12)",
+      "pkg/wallet/tokenstandard.go (12)"
+     ],
+     "hits": 78
+    },
+    "multi_synchronizer__streams": {
+     "status": "found",
+     "evidence": [
+      "pkg/service/ledger/update_service.go (32)",
+      "pkg/model/ledger.go (24)",
+      "pkg/service/ledger/converters.go (16)"
+     ],
+     "hits": 88
+    },
+    "token_standard__one_step_transfers": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/gen_clients/splice_amulet_0_1_16.go (176)",
+      "pkg/client/scanproxy.go (8)"
+     ],
+     "hits": 184
+    },
+    "token_standard__pre_approvals": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/gen_clients/splice_amulet_0_1_16.go (184)",
+      "pkg/client/scanproxy.go (14)"
+     ],
+     "hits": 198
+    },
+    "token_standard__allocate": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/gen_clients/splice_api_token_allocation_instruction_v1_1_0_0.go (151)",
+      "pkg/wallet/tokenstandard.go (78)",
+      "pkg/wallet/gen_clients/splice_amulet_0_1_16.go (41)"
+     ],
+     "hits": 330
+    },
+    "token_standard__transfer": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/gen_clients/splice_api_token_transfer_instruction_v1_1_0_0.go (173)",
+      "pkg/wallet/gen_clients/splice_amulet_0_1_16.go (73)",
+      "pkg/wallet/tokenstandard.go (31)"
+     ],
+     "hits": 287
+    },
+    "token_standard__instrument_inspection": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/tokenstandard.go (21)",
+      "pkg/wallet/gen_clients/splice_api_token_holding_v1_1_0_0.go (13)",
+      "pkg/wallet/gen_clients/splice_api_token_allocation_v1_1_0_0.go (5)"
+     ],
+     "hits": 45
+    },
+    "token_standard__v1": {
+     "status": "found",
+     "evidence": [
+      "pkg/wallet/gen_clients/splice_api_token_holding_v1_1_0_0.go (4)",
+      "pkg/wallet/tokenstandard.go (4)",
+      "pkg/wallet/gen_clients/splice_api_token_allocation_instruction_v1_1_0_0.go (3)"
+     ],
+     "hits": 20
+    },
+    "token_standard__v2": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0
+    },
+    "documentation__user_manual": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "701-line README as manual, examples/, reference via pkg.go.dev; docs/ is dev-only"
+    },
+    "documentation__tutorials": {
+     "status": "not_found",
+     "evidence": [],
+     "hits": 0,
+     "review": "701-line README as manual, examples/, reference via pkg.go.dev; docs/ is dev-only"
+    },
+    "documentation__examples": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "701-line README as manual, examples/, reference via pkg.go.dev; docs/ is dev-only"
+    },
+    "documentation__reference": {
+     "status": "found",
+     "evidence": [],
+     "hits": 0,
+     "review": "701-line README as manual, examples/, reference via pkg.go.dev; docs/ is dev-only"
+    }
+   }
+  }
+ ]
+}

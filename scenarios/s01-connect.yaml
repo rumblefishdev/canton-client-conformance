@@ -1,0 +1,11 @@
+id: S1
+title: Connect with OAuth2, read version and ledger end
+summary: OAuth2 client credentials; Ledger API version (where the SDK exposes it) compared with the reference; ledger end.
+needs: [localnet]
+lanes: [ts, rust]
+impl: basics:s1_connect
+standard: [basic_infrastructure__authorization]
+verifies:
+  ts: [basic_infrastructure__authorization]
+  rust: [basic_infrastructure__authorization]
+findings: ["docs/findings-live.md §4 (TS sends an empty scope), §5 (no public version())"]

@@ -1,0 +1,552 @@
+# Canton Ledger Client Standard: machine-readable capability list.
+# Source: canton-network/cf-docs docs-main/sdks-tools/language-bindings/client-standard.mdx (Apache-2.0),
+# last changed 2026-10-20 (#1773); copied verbatim to standard/client-standard.source.mdx. 'This standard reflects Canton 3.5.'
+# id = <section>__<row>, the convention used by nodejumper-org/canton-rust-sdk conformance/capabilities.toml.
+# rust_nodejumper: whether Rust SDK v0.3.2 (grant #407) claims the row; rust_id is its id where it differs.
+# Rust ids with no official row (claimed against the older 2026-06 sheet): topology__generic_mappings
+- id: codegen_and_bindings__daml_representation
+  domain: "Codegen and bindings"
+  name: "Daml representation"
+  requirement: Required
+  rust_nodejumper: claimed
+  rust_id: codegen_and_bindings__daml_representation_codegen
+  description: "Implementation contains a code-generating tool that is able to convert Daml types into the native representation in the target language. It must support - all serializable Daml types - interfaces - contract keys - dependencies"
+- id: codegen_and_bindings__json_codec
+  domain: "Codegen and bindings"
+  name: "JSON Codec"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The tool extends the code-generated objects in the native language with methods to serialize and deserialize to JSON format required in the Ledger API JSON requests and responses"
+- id: codegen_and_bindings__grpc_codec
+  domain: "Codegen and bindings"
+  name: "gRPC Codec"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The tool extends the code-generated objects in the native language with methods to serialize and deserialize to proto format required in the Ledger API gRPC requests and responses"
+- id: codegen_and_bindings__json_bindings
+  domain: "Codegen and bindings"
+  name: "JSON Bindings"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library provides utility wrappers in the host languages that facilitate construction and bridge the interaction between the classes generated from Ledger API OpenAPI definitions and the classes code-generated from Daml"
+- id: codegen_and_bindings__grpc_bindings
+  domain: "Codegen and bindings"
+  name: "gRPC Bindings"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library provides utility wrappers in the host languages that facilitate construction and bridge the interaction between the classes generated from Ledger API proto definitions and the classes code-generated from Daml"
+- id: codegen_and_bindings__pqs_bindings
+  domain: "Codegen and bindings"
+  name: "PQS bindings"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library provides mechanisms that bridge the interaction between the table functions in PQS and the classes code-generated from Daml"
+- id: basic_infrastructure__tls
+  domain: "Basic infrastructure"
+  name: "TLS"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library utilizes secure HTTP and gRPC connections using TLS. It supports mutual and server-side TLS."
+- id: basic_infrastructure__authorization
+  domain: "Basic infrastructure"
+  name: "Authorization"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library supports client credential workflow to obtain and refresh OAuth tokens. It has the capability to inject the JWT tokens into the call context"
+- id: basic_infrastructure__error_parsing_and_handling
+  domain: "Basic infrastructure"
+  name: "Error parsing and handling"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library has the ability to parse and process all types of errors returned by Ledger API. It supports - classification of errors into retriable and non-retriable - JSON and gRPC errors - extraction of the error code, message, request info, error info and other structured details such as contract ids, packages, party names etc."
+- id: basic_infrastructure__tracing
+  domain: "Basic infrastructure"
+  name: "Tracing"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library handles tracing according to the OpenTelemetry standard and OTLP servers. It supports - creation and injection of trace ids into the headers of the requests - extraction of trace ids from the response - support JSON and gRPC requests - report the spans to the OpenTelemetry compatible OTLP server"
+- id: basic_infrastructure__retry_logic
+  domain: "Basic infrastructure"
+  name: "Retry logic"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library handles seamlessly the retry logic for Ledger API calls. It supports - retries on retriable errors only - timeouts - maximum number of retries"
+- id: basic_infrastructure__logging
+  domain: "Basic infrastructure"
+  name: "Logging"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library is able to log using a standard library adequate for the host language. It supports - logging requests and responses - utilizes trace-ids - verbose logging of Ledger API errors - configurable log level sensitivity - configurable log destination - configurable log format"
+- id: basic_infrastructure__metrics
+  domain: "Basic infrastructure"
+  name: "Metrics"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library handles metrics according to OpenTelemetry standard It supports - sending metrics to the OTLP server - reporting vitals of the communication: number of requests and responses - breakdown by error and success - breakdown by endpoint"
+- id: basic_infrastructure__signing
+  domain: "Basic infrastructure"
+  name: "Signing"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library supports signing algorithms that are needed in the externally signed Ledger API endpoints. It supports - KMS systems - keys provided in a file - all algorithms supported by Canton"
+- id: basic_infrastructure__node_health
+  domain: "Basic infrastructure"
+  name: "Node Health"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library supports monitoring node's health letting the client applications respond to the intermittent and permanent failure situations."
+- id: commands__json
+  domain: "Commands"
+  name: "JSON"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library facilitates construction and submission of Daml commands over the Ledger API JSON endpoint. It supports - create commands - exercise commands"
+- id: commands__grpc
+  domain: "Commands"
+  name: "gRPC"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library facilitates construction and submission of Daml commands over the Ledger API gRPC endpoint. It supports - create commands - exercise commands"
+- id: commands__internal_commands
+  domain: "Commands"
+  name: "Internal commands"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library uses the internal command submission endpoints. It supports - submit method - submitAndWait in all its forms"
+- id: commands__external_commands
+  domain: "Commands"
+  name: "External commands"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library uses externally signed command submission endpoints It supports - prepare method - execute method - executeAndWait in all its forms"
+- id: commands__deduplication
+  domain: "Commands"
+  name: "Deduplication"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library contains logic that allows client applications to send commands in a reliable fashion utilizing the built-in deduplicating provisions of the Ledger API. It supports - error handling - retries"
+- id: commands__command_recovery
+  domain: "Commands"
+  name: "Command recovery"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library is capable of recovering pending command state after the crash utilizing command completion endpoint. It supports - recovery from participant crash - recovery from client crash - recovery from lost connection - recovery from a timeout"
+- id: commands__batching
+  domain: "Commands"
+  name: "Batching"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library is capable of creating batched Ledger API commands. For externally signed (interactive) submission, batches are currently limited to a single root command/node."
+- id: commands__contract_keys
+  domain: "Commands"
+  name: "Contract keys"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library uses Ledger API command submission provisions for contract keys. It supports - exercising choices by contract keys - prefetching of contract keys for accelerated execution"
+- id: commands__explicit_disclosure
+  domain: "Commands"
+  name: "Explicit disclosure"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library uses explicit disclosure to augment the submitted commands with additional contracts that the submitting party is not privy to."
+- id: commands__pending_set
+  domain: "Commands"
+  name: "Pending set"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library keeps track of the contracts that are being operated on in a pending data set. It supports - keeping track of consuming exercises - keeping track of creates - keeping track of non-consuming exercises"
+- id: commands__package_selection
+  domain: "Commands"
+  name: "Package selection"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library allows selecting a particular package version preference for command submission in the package_id_selection_preference field."
+- id: commands__ha
+  domain: "Commands"
+  name: "HA"
+  requirement: Upcoming
+  rust_nodejumper: not claimed
+  description: "The library supports command deduplication across multiple participants that host the same submitting parties."
+- id: streams__json
+  domain: "Streams"
+  name: "JSON"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library facilitates query construction and subscription to ACS and Update streams over the Ledger API JSON endpoint."
+- id: streams__grpc
+  domain: "Streams"
+  name: "gRPC"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library facilitates query construction and subscription to ACS and Update streams over the Ledger API gRPC endpoint."
+- id: streams__acs_streaming
+  domain: "Streams"
+  name: "ACS streaming"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library uses streaming endpoints to retrieve the ACS for given parties and templates. It utilizes streaming endpoints in gRPC and websocket endpoints in JSON."
+- id: streams__acs_paging
+  domain: "Streams"
+  name: "ACS paging"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library uses paging endpoints to retrieve the ACS for given parties and templates. It utilizes paging in gRPC and JSON."
+- id: streams__updates_streaming
+  domain: "Streams"
+  name: "Updates streaming"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library uses streaming endpoints to retrieve the updates for given parties and templates. It utilizes streaming endpoints in gRPC and websocket endpoints in JSON."
+- id: streams__updates_paging
+  domain: "Streams"
+  name: "Updates paging"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library uses paging endpoints to retrieve the updates for given parties and templates. It utilizes paging in gRPC and JSON."
+- id: streams__reverse_order
+  domain: "Streams"
+  name: "Reverse order"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library can serve data in reverse order utilizing appropriate Ledger API provisions."
+- id: streams__interfaces
+  domain: "Streams"
+  name: "Interfaces"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library subscribes to and processes interface views"
+- id: streams__topology_events
+  domain: "Streams"
+  name: "Topology events"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library subscribes to and processes topology events"
+- id: streams__in_memory_acs
+  domain: "Streams"
+  name: "In memory ACS"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library contains a component that keeps an in-memory copy of the Active Contract Set. It supports - parameterization by set of parties and templates - filters to limit the ACS to contracts with specific attributes - initiates from an ACS query and keeps current view by subscribing to update stream - interface views"
+- id: streams__resilient_streams
+  domain: "Streams"
+  name: "Resilient streams"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library can recover a stream after an interrupt from the last known location. It supports - recovery from the last offset - recovery from the last record time vector - recovery from the continuation token"
+- id: streams__ha
+  domain: "Streams"
+  name: "HA"
+  requirement: Upcoming
+  rust_nodejumper: not claimed
+  description: "The library can recover a stream transmission after a switch-over to a secondary participant. It supports - record time vectors - paging restarts"
+- id: parties__json
+  domain: "Parties"
+  name: "JSON"
+  requirement: Required
+  rust_nodejumper: claimed
+  rust_id: parties__json_party_mgmt
+  description: "The library utilizes party management functionality of the Ledger API using JSON endpoints."
+- id: parties__grpc
+  domain: "Parties"
+  name: "gRPC"
+  requirement: Required
+  rust_nodejumper: claimed
+  rust_id: parties__grpc_party_mgmt
+  description: "The library utilizes party management functionality of the Ledger API using gRPC endpoints."
+- id: parties__list_parties
+  domain: "Parties"
+  name: "List parties"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library supports listing parties on the node using various filtering criteria."
+- id: parties__local_parties_creation
+  domain: "Parties"
+  name: "Local parties creation"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library can create parties local to the participant node. It takes advantage of self administration mode where party is automatically assigned to the requesting user."
+- id: parties__external_parties_creation
+  domain: "Parties"
+  name: "External parties creation"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library can create external parties. It supports - generate method - signing - allocate method - self administration mode"
+- id: parties__local_parties_modification
+  domain: "Parties"
+  name: "Local parties modification"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library can change aspects of the party topology definition. In particular it supports - changing mapping of parties to participants - changing participant permission levels"
+- id: parties__external_parties_modification
+  domain: "Parties"
+  name: "External parties modification"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library can change aspects of the party topology definition. In particular it supports - changing mapping of parties to participants - changing participant permission levels - changing keys responsible for transaction signing - change the signature threshold"
+- id: parties__decentralized_party_creation
+  domain: "Parties"
+  name: "Decentralized party creation"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library can manage decentralized parties. In particular it supports - create a decentralized namespace - modify a decentralized namespace - changing participant permission levels - changing keys responsible for transaction signing - change the signature threshold"
+- id: packages__json
+  domain: "Packages"
+  name: "JSON"
+  requirement: Required
+  rust_nodejumper: claimed
+  rust_id: packages__json_package_mgmt
+  description: "The library utilizes package management functionality of the Ledger API using JSON endpoints."
+- id: packages__grpc
+  domain: "Packages"
+  name: "gRPC"
+  requirement: Required
+  rust_nodejumper: claimed
+  rust_id: packages__grpc_package_mgmt
+  description: "The library utilizes package management functionality of the Ledger API using gRPC endpoints."
+- id: packages__upload
+  domain: "Packages"
+  name: "Upload"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library facilitates the upload of the DAR packages to the participant using the Ledger API endpoints"
+- id: packages__validation
+  domain: "Packages"
+  name: "Validation"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library facilitates the validation of the DAR packages to the participant using the Ledger API endpoints"
+- id: packages__vetting
+  domain: "Packages"
+  name: "Vetting"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library facilitates vetting of the required packages on the target participants and synchronizers. It is capable of computing the required vetting action from the current vetting state and the desired outcome."
+- id: packages__listing
+  domain: "Packages"
+  name: "Listing"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library facilitates listing the packages on the participant using various criteria such as package names, ids, participants and synchronizers"
+- id: packages__package_preference
+  domain: "Packages"
+  name: "Package preference"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "Library facilitates the selection of the preferred packages for a command submission. It makes sure the preference conforms with the existing vetting state."
+- id: packages__description
+  domain: "Packages"
+  name: "Description"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library uses the Daml description service to request the descriptors of the Daml package and types from the participants"
+- id: topology__list_mappings
+  domain: "Topology"
+  name: "List mappings"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library enables the retrieval and inspection of current topology mappings. Users can apply precise list parameters to restrict search results based on specific mapping types or attributes."
+- id: topology__mapping_presentation
+  domain: "Topology"
+  name: "Mapping presentation"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library supports rendering of the topology mapping in a format idiomatic to the target programming language."
+- id: topology__mapping_construction
+  domain: "Topology"
+  name: "Mapping construction"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library facilitates creation of new topology mappings by abstracting the underlying complexity of calculating state modifications relative to prior values."
+- id: topology__mapping_signing
+  domain: "Topology"
+  name: "Mapping signing"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library supports signing of topology transactions."
+- id: topology__mapping_submission
+  domain: "Topology"
+  name: "Mapping submission"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library facilitates submission of the signed topology transactions. It supports synchronous and asynchronous semantics."
+- id: topology__namespace_delegations
+  domain: "Topology"
+  name: "Namespace delegations"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library supports managing namespace delegations of all shapes"
+- id: topology__decentralized_namespaces
+  domain: "Topology"
+  name: "Decentralized namespaces"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library supports managing decentralized namespace delegations of all shapes"
+- id: topology__owner_to_key_mapping
+  domain: "Topology"
+  name: "Owner to key mapping"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library supports managing owner to key mappings of all shapes"
+- id: topology__party_to_participant
+  domain: "Topology"
+  name: "Party to participant"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library supports managing party to participant mappings of all shapes"
+- id: topology__party_to_key_mapping
+  domain: "Topology"
+  name: "Party to key mapping"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library supports managing party to key mappings of all shapes"
+- id: topology__vetted_packages
+  domain: "Topology"
+  name: "Vetted packages"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library supports managing vetted package mappings of all shapes"
+- id: topology__topology_via_admin_api
+  domain: "Topology"
+  name: "Topology via Admin API"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library supports topology functionality exposed through the Admin API"
+- id: topology__topology_via_ledger_api
+  domain: "Topology"
+  name: "Topology via Ledger API"
+  requirement: Upcoming
+  rust_nodejumper: not claimed
+  description: "The library supports topology functionality exposed through the Ledger API"
+- id: user__self_inspect
+  domain: "User"
+  name: "Self-inspect"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library allows the users to pull own record to check permissions and other settings."
+- id: user__self_admin
+  domain: "User"
+  name: "Self-admin"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library allows the users to add and modify the parties attached to the user account."
+- id: traffic__traffic_computation
+  domain: "Traffic"
+  name: "Traffic computation"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library processes the traffic cost estimations produced by the prepare transactions. It facilitates setting limits on transaction cost. It can convert the traffic cost expressed in the synchronizer units to local units of the validator"
+- id: traffic__traffic_account_listing_and_inspecting
+  domain: "Traffic"
+  name: "Traffic account listing and inspecting"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library supports listing traffic accounts available to the user and inspecting the account balance"
+- id: traffic__traffic_account_selection
+  domain: "Traffic"
+  name: "Traffic account selection"
+  requirement: Upcoming
+  rust_nodejumper: not claimed
+  description: "The library facilitates selecting a traffic account to be debited during the command submission"
+- id: traffic__traffic_top_up
+  domain: "Traffic"
+  name: "Traffic top-up"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library facilitates the top up operation replenishing the traffic accounts with fresh credits"
+- id: multi_synchronizer__listing
+  domain: "Multi-synchronizer"
+  name: "Listing"
+  requirement: Required
+  rust_nodejumper: claimed
+  rust_id: multi_synchronizer__listing_connected_synchronizers
+  description: "The library lists connected synchronizers for the participant in general and for a party in particular"
+- id: multi_synchronizer__parties
+  domain: "Multi-synchronizer"
+  name: "Parties"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library allows managing party allocations and changing topology configurations across multiple synchronizers."
+- id: multi_synchronizer__packages
+  domain: "Multi-synchronizer"
+  name: "Packages"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library allows users to maintain package vetting where the set of package versions vetted on each synchronizer is separately tailored for the needs of the application workflows."
+- id: multi_synchronizer__commands
+  domain: "Multi-synchronizer"
+  name: "Commands"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library allows the clients to select the target synchronizer. It keeps track of it during command retries and in the completion processing."
+- id: multi_synchronizer__streams
+  domain: "Multi-synchronizer"
+  name: "Streams"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library keeps track of the current synchronizer of the contract. It handles the out of order assign and unassign events putting them back in order distilling the most up to date contract state."
+- id: token_standard__one_step_transfers
+  domain: "Token Standard"
+  name: "One step transfers"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library supports workflows with one step transfers"
+- id: token_standard__pre_approvals
+  domain: "Token Standard"
+  name: "Pre-approvals"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library supports pre-approvals"
+- id: token_standard__allocate
+  domain: "Token Standard"
+  name: "Allocate"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library supports trade allocations"
+- id: token_standard__transfer
+  domain: "Token Standard"
+  name: "Transfer"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library supports asset transfers"
+- id: token_standard__instrument_inspection
+  domain: "Token Standard"
+  name: "Instrument inspection"
+  requirement: Required
+  rust_nodejumper: claimed
+  description: "The library supports instrument inspection"
+- id: token_standard__v1
+  domain: "Token Standard"
+  name: "V1"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library supports interactions with interfaces and templates written according to Token Standard V1"
+- id: token_standard__v2
+  domain: "Token Standard"
+  name: "V2"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library supports interactions with interfaces and templates written according to Token Standard V2"
+- id: documentation__user_manual
+  domain: "Documentation"
+  name: "User manual"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library is shipped with the comprehensive user manual that covers all functionality offered by the library. It must explain how to use each capability in this standard in the library's language."
+- id: documentation__tutorials
+  domain: "Documentation"
+  name: "Tutorials"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library is shipped with tutorials that demonstrate key interactions: - building applications - configuration - connecting to ledger - creating and managing users, parties - uploading and vetting packages - submitting commands using internal and external signing - maintaining ACS - interacting with PQS - managing traffic credits"
+- id: documentation__examples
+  domain: "Documentation"
+  name: "Examples"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library is shipped with example application(s) that showcases the capabilities and can be used as a blueprint for developers"
+- id: documentation__reference
+  domain: "Documentation"
+  name: "Reference"
+  requirement: Required
+  rust_nodejumper: not claimed
+  description: "The library is shipped with a complete reference material where each class, method and function is explained."

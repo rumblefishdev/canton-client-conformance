@@ -1,0 +1,58 @@
+# SDKs scanned for the coverage map. `roots` are scanned for hand-written source with `ext`;
+# `exclude` drops generated code (protobuf/OpenAPI stubs), vendored deps and build output.
+# `claims` points at a machine-readable self-declaration where one exists.
+# `poc: true` = in scope for the proof of concept (shown in the matrix). Others are scanned but listed as "coming later"
+# with `later_reason`, because their cells have not been hand-reviewed.
+- key: java
+  later_reason: "Official bindings contain no client code (data model + codegen runtime only)"
+  name: Java (DA, official)
+  repo: digital-asset/canton
+  roots: [community/bindings-java/src/main]
+  ext: [java]
+  exclude: []
+  note: "Official bindings = javaapi.data model classes; codegen via `dpm codegen-java` (not scanned)."
+- key: ts
+  poc: true
+  name: TypeScript (DA, official)
+  repo: canton-network/wallet
+  roots: [sdk, core]
+  ext: [ts]
+  exclude: ['node_modules', '/_proto/', 'ledger-proto', 'rpc-gen', '\.test\.ts$', '\.spec\.ts$', '/dist/', 'generated', '/vectors/', 'ledger-client-types']
+  note: "JSON Ledger API only (no gRPC client), wallet-oriented."
+- key: python
+  later_reason: "dazl's hand-written client is Ledger API v1 / Canton 2.x; no Canton 3 client to test yet"
+  name: Python dazl (DA)
+  repo: digital-asset/dazl-client
+  roots: [python/dazl]
+  ext: [py]
+  exclude: ['/_gen/', '/_gen_api/', 'generated']
+  note: "Hand-written client is Ledger API v1 / Canton 2.x; v2 only as raw generated JSON client (dazl.api)."
+- key: rust_nodejumper
+  poc: true
+  name: Rust (Nodejumper)
+  repo: nodejumper-org/canton-rust-sdk
+  roots: [crates]
+  ext: [rs]
+  exclude: ['canton-proto', '/tests/', 'canton-splice-', 'canton-daml-stdlib', 'canton-quickstart-licensing', 'canton-conformance', 'generated']
+  claims: conformance/capabilities.toml
+- key: rust_zenith
+  later_reason: "Second Rust SDK; useful as a divergence pair with Nodejumper"
+  name: Rust (Zenith canton-rs)
+  repo: zenith-network/canton-rs
+  roots: ['.']
+  ext: [rs]
+  exclude: ['/target/', '/proto', 'generated', '/tests/', 'pb\.rs$', 'sync-upstream']
+- key: csharp
+  later_reason: "Strong candidate (richtypes corpus, interactive submission); cells not yet hand-reviewed"
+  name: C# (Peaceful Studio)
+  repo: peacefulstudio/canton-dotnet-sdk
+  roots: [src]
+  ext: [cs]
+  exclude: ['/obj/', '/bin/', 'Generated', '\.g\.cs$', 'Tests?/', '/Protos?/']
+- key: go
+  later_reason: "Cells not yet hand-reviewed; hash handling needs checking"
+  name: Go (Noders go-daml)
+  repo: noders-team/go-daml
+  roots: [pkg, internal]
+  ext: [go]
+  exclude: ['\.pb\.go$', '_test\.go$', '/proto/', 'generated', '/testdata/']

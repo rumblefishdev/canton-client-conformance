@@ -1,0 +1,11 @@
+id: S7
+title: Error taxonomy
+summary: Exercising an archived contract gives the reference's error id and status; a well-formed forged JWT gives Unauthenticated.
+needs: [localnet]
+lanes: [ts, rust]
+impl: basics:s7_errors
+standard: [basic_infrastructure__error_parsing_and_handling]
+verifies:
+  ts: [basic_infrastructure__error_parsing_and_handling]
+  rust: [basic_infrastructure__error_parsing_and_handling]
+findings: ["docs/findings-live.md §3 (TS throws plain objects), §6 (malformed static token fails locally)"]
