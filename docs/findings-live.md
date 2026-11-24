@@ -18,12 +18,21 @@ per SDK are now *Verified* on the coverage map. For Rust, these include 9 of its
 
 ## Findings
 
-1. **Nested `Optional` encoding is a silent data trap for JSON clients (Standard / docs).** The JSON Ledger API v2 writes
-   `Optional (Optional a)` with one array level per Optional (`Some None` = `[[]]`). The flatter form I first expected
-   (`Some None` = `[]`) is **accepted and stored as `None`, with no error**. Verified on 3.7.3 (probe transcript, local only: `report/out/legacy/live-out/probe`). Peaceful
-   Studio's C# conformance notes document the same rule. Any JSON-based SDK, or hand-written client, that follows the older
-   encoding silently changes data. This belongs in the Ledger Client Standard as a test vector. *To check: which current doc
-   page still shows the flat form.*
+1. **Nested `Optional`: the JSON Ledger API v2 differs from the Daml 2.x JSON spec, silently.** For
+   `Optional (Optional a)`, the [Daml 2.x JSON API spec](https://github.com/digital-asset/docs.daml.com/blob/cc6128ace44610ed42876d063107bf9ffa4cc394/docs/2.10.6/docs/json-api/lf-value-specification.rst?plain=1#L345-L373) writes `None` as `null` and `Some None` as `[]`. The JSON
+   Ledger API v2 uses one array level per Optional: `Some None` is `[[]]` and `[]` is `None`. The
+   [current Canton docs](https://github.com/digital-asset/canton/blob/3694e3fb1cbb003008975ad4084381003e6e1af9/docs-open/src/sphinx/sdk/reference/json-api/daml-lf-json-encoding.csv?plain=1#L53) describe only a single-level `Optional`. A client that follows the 2.x rule therefore
+   stores `None` when it means `Some None`, with no error, and gets an internal error when it sends `None`.
+
+   | JSON sent for `Optional (Optional Text)` | Daml 2.x spec | JSON Ledger API v2 (Canton 3.7.3) |
+   |---|---|---|
+   | `null` | `None` | rejected, `LEDGER_API_INTERNAL_ERROR` |
+   | `[]` | `Some None` | `None` |
+   | `[[]]` | invalid for this type | `Some None` |
+
+   Repro: `tools/repro/nested-optional.sh` (LocalNet slot a-validator-1, `curl` and `jq`). Peaceful Studio's C# SDK
+   notes describe the same v2 rule.
+
 2. **TS SDK: create does not return the contract id.** `sdk.ledger.internal.submit` uses submit-and-wait, which returns only
    `updateId`. Callers must find the contract through the ACS or a second call. Rust returns it.
 3. **TS SDK: errors are thrown as plain objects, not `Error`s.** The Canton error body is all there (`code`, `grpcCodeValue`,
