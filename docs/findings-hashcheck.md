@@ -2,6 +2,9 @@
 
 > Section 2A is a documented V2 limitation, raised with the maintainers as
 > [nodejumper-org/canton-rust-sdk#26](https://github.com/nodejumper-org/canton-rust-sdk/issues/26).
+> **Fixed in canton-rust-sdk [v0.3.3](https://github.com/nodejumper-org/canton-rust-sdk/releases/tag/v0.3.3)
+> (2026-11-27):** a deadline now selects V3 by default, and an explicit V2 request with a deadline is refused. The
+> results below are for the pinned commit `8d8a92b` (v0.3.2).
 
 Setup: DA hash vectors at `canton-network/wallet@8b28459` (128 files). Subjects: `@canton-network/core-tx-hashing`
 1.2.0 and `nodejumper-org/canton-rust-sdk@8d8a92b` (`canton_ledger::hashing`). Repro: scenario S11a, `.venv/bin/pytest -k S11a` (offline, after `tools/fetch-vectors.sh`).
@@ -44,7 +47,7 @@ executing participant "can ignore or modify the `max_record_time` field". Canton
 prepared transaction under either scheme. Rust computes the participant's own hash, so its `Prepared` check passes. The
 SDK-level point: it defaults to V2 while offering `with_max_record_time()`, whose docs promise the deadline is
 enforced. Suggested: document it, refuse or warn under V2, or default to V3 on PV35+. Raised as
-[#26](https://github.com/nodejumper-org/canton-rust-sdk/issues/26). The vector is a V3 capture relabelled V2.
+[#26](https://github.com/nodejumper-org/canton-rust-sdk/issues/26), fixed in v0.3.3. The vector is a V3 capture relabelled V2.
 
 **B. Malformed transaction structure accepted (8).** `orphan-node`, `shared-child`, `root-listed-twice`,
 `no-roots`, `rollback-without-children`, `two-seeds-for-one-node` (one seed silently wins), `node-id-leading-zero`,
